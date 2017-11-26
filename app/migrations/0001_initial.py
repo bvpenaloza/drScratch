@@ -2,11 +2,15 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
+import datetime
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('auth', '0001_initial'),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
@@ -37,6 +41,16 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
+            name='Classroom',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=100)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='Comment',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
@@ -45,6 +59,20 @@ class Migration(migrations.Migration):
                 ('date', models.DateField()),
             ],
             options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='CSVs',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('filename', models.CharField(max_length=100)),
+                ('directory', models.CharField(max_length=100)),
+                ('organization', models.CharField(max_length=100)),
+                ('date', models.DateTimeField(default=datetime.datetime.now)),
+            ],
+            options={
+                'get_latest_by': 'date',
             },
             bases=(models.Model,),
         ),
@@ -81,6 +109,32 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
+            name='File',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('filename', models.CharField(max_length=100)),
+                ('organization', models.CharField(max_length=100)),
+                ('method', models.CharField(max_length=100)),
+                ('time', models.DateField()),
+                ('language', models.TextField(default=b'en')),
+                ('score', models.IntegerField()),
+                ('abstraction', models.IntegerField()),
+                ('parallelization', models.IntegerField()),
+                ('logic', models.IntegerField()),
+                ('synchronization', models.IntegerField()),
+                ('flowControl', models.IntegerField()),
+                ('userInteractivity', models.IntegerField()),
+                ('dataRepresentation', models.IntegerField()),
+                ('spriteNaming', models.IntegerField()),
+                ('initialization', models.IntegerField()),
+                ('deadCode', models.IntegerField()),
+                ('duplicateScript', models.IntegerField()),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='Mastery',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
@@ -92,6 +146,29 @@ class Migration(migrations.Migration):
                 ('interactivity', models.IntegerField()),
                 ('representation', models.IntegerField()),
                 ('scoring', models.IntegerField()),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Organization',
+            fields=[
+                ('user_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
+                ('hashkey', models.TextField()),
+            ],
+            options={
+                'abstract': False,
+                'verbose_name': 'user',
+                'verbose_name_plural': 'users',
+            },
+            bases=('auth.user',),
+        ),
+        migrations.CreateModel(
+            name='OrganizationHash',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('hashkey', models.TextField()),
             ],
             options={
             },
@@ -119,6 +196,55 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('character', models.TextField()),
                 ('myproject', models.ForeignKey(to='app.Project')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Stats',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('daily_score', models.TextField()),
+                ('basic', models.TextField(default=b'')),
+                ('development', models.TextField(default=b'')),
+                ('master', models.TextField(default=b'')),
+                ('daily_projects', models.TextField(default=b'')),
+                ('parallelism', models.IntegerField(default=0)),
+                ('abstraction', models.IntegerField(default=0)),
+                ('logic', models.IntegerField(default=0)),
+                ('synchronization', models.IntegerField(default=0)),
+                ('flowControl', models.IntegerField(default=0)),
+                ('userInteractivity', models.IntegerField(default=0)),
+                ('dataRepresentation', models.IntegerField(default=0)),
+                ('deadCode', models.IntegerField(default=0)),
+                ('duplicateScript', models.IntegerField(default=0)),
+                ('spriteNaming', models.IntegerField(default=0)),
+                ('initialization', models.IntegerField(default=0)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Student',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('student', models.ForeignKey(to=settings.AUTH_USER_MODEL, unique=True)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Teacher',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('username', models.TextField()),
+                ('password', models.TextField()),
+                ('email', models.TextField()),
+                ('hashkey', models.TextField()),
+                ('teacher', models.ForeignKey(to=settings.AUTH_USER_MODEL, unique=True)),
             ],
             options={
             },

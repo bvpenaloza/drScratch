@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 # -*- coding: utf-8 -*-
 
-from django.http import HttpResponseRedirect, HttpResponseNotFound
+from django.http import HttpResponseRedirect, HttpResponseNotFound, Http404
 from django.http import HttpResponse, HttpResponseServerError
 from django.core.context_processors import csrf
 from django.core.cache import cache
@@ -1039,6 +1039,7 @@ def analyzeProject(request,file_name, fileName):
             file_name = list_file[0] + '\(' + list_file[1]
             list_file = file_name.split(')')
             file_name = list_file[0] + '\)' + list_file[1]
+    
         #Request to hairball
         metricMastery = "hairball -p mastery.Mastery " + file_name
         metricDuplicateScript = "hairball -p \
@@ -1058,10 +1059,10 @@ def analyzeProject(request,file_name, fileName):
         resultSpriteNaming = os.popen(metricSpriteNaming).read()
         resultDeadCode = os.popen(metricDeadCode).read()
         resultInitialization = os.popen(metricInitialization).read()
+
         #Plug-ins not used yet
         #resultBlockCounts = os.popen(metricBlockCounts).read()
         #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
-
         #Create a dictionary with necessary information
         dictionary.update(procMastery(request,resultMastery, fileName))
         dictionary.update(procDuplicateScript(resultDuplicateScript, fileName))
@@ -1075,6 +1076,7 @@ def analyzeProject(request,file_name, fileName):
         #Plug-ins not used yet
         #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
         #dictionary.update(procBlockCounts(resultBlockCounts))
+
         return dictionary
     else:
         return HttpResponseRedirect('/')
