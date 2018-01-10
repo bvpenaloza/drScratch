@@ -1,0 +1,251 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
+    <script src="../../static/app/scripts/bootstrap-modal.js"></script>
+    <script src="../../static/app/scripts/scratchblocks2.js"></script>
+    <script src="../../static/app/scripts/translations.js"></script>
+    <script src="../../static/app/scripts/bootstrap.js"></script>
+<link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
+    
+
+    <!-- SITE TITLE -->
+    <title>Dr. Scratch</title>
+
+
+    <link rel="stylesheet" href="/static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT  
+    ============================== -->
+    <link rel="icon" href="/static/app/images/favicon.ico">
+    <link rel="stylesheet" href="static/app/icons/icons.css">  
+    <link type="text/css" rel="stylesheet" href="/static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="/static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS   
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="/static/app/content/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles.css">
+    <link rel="stylesheet" href="/static/app/content/master.css">
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+
+    <script>
+    $(document).ready(function() {
+        scratchblocks2.parse();
+    });
+var choose_lang = x=window.navigator.language||navigator.browserLanguage;
+    choose_lang = choose_lang.split("-")[0];
+    console.log(choose_lang);
+
+    scratchblocks2.reset_languages();
+    var lang_dict = scratchblocks2._translations[choose_lang];
+      console.log(lang_dict.blocks);
+      if (lang_dict) scratchblocks2.load_language(lang_dict);
+    </script>
+<script>
+    // Instance the tour
+    $(document).ready(function(){
+        $("#tour").click(function(){
+    var tour = new Tour({
+      storage: false,
+      backdrop: true,
+      steps: [
+      {
+        element: "#stepone",
+        title: "{% trans 'Score' %}",
+        content: "{% trans 'This section shows the total score.' %}"
+      },
+      {
+        element: "#steptwo",
+        title: "{% trans 'Improve the score'%}",
+        content: "{% trans 'You do not like the score that you got? Improve it following our advice.' %}"
+      },
+      {
+        element: "#stepthree",
+        title: "{% trans 'Bad habits in programming' %}",
+        content:"{% trans 'If you correct your bad habits in programming, you will avoid problems in the future.'%}"
+      },
+      {
+        element: "#stepfour",
+        title: "{% trans 'Score in detail'%}",
+        content: "{% trans 'Here we show the score in each programming skill.' %}",
+        placement:'left'
+      }
+    ]});
+     tour.init();
+    // Initialize the tour
+    
+           
+            tour.start();
+
+        });
+});
+    </script>
+    <script>
+        window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.desplegable').popover();
+    });
+    </script>
+    <script>
+        $(document).ready(function () {
+            if("{{ dupCode }}" == ""){
+                $("#dupCode").attr("data-content","You don't have duplicated scripts.");
+            }else{
+                str = "{{ dupCode }}".split(",");
+                for (n in str){
+
+                    if(n == 0){str[n] = str[n].slice(12,-11)}
+                    else if(n == str.length-1) { str[n] = str[n].slice(13,-12)}
+                    else{
+                    str[n] = str[n].slice(13,-11)};
+                };
+               // alert(
+                $("#dupCode").attr("data-content",str.join("\n"));
+            }
+
+    });
+    </script>
+</head>
+<body>
+    <!-- TOP BAR -->
+<div id="wrap">
+    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+        <div class="container">          
+            <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                <a class="navbar-brand" href="/">
+                    <img src="static/app/images/logo_main.png" alt="">
+                </a>
+                <ul class="nav navbar-nav navbar-right main-navigation ">
+                        <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
+<li class="navbar-brand"><a class="btn btn-default" id="tour">TOUR</a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /END TOP BAR -->
+    
+<div class="container">
+    <!-- BODY -->
+
+    <!-- POINTS PANEL -->
+        <div class="devpanel">
+      
+            <div class="panel panel-success" id="devpanel">
+                <div class="panel-heading" id="stepone" >
+                    <img src="static/app/images/cat.png" class="img-responsive col-md-2">
+                    <h2 id="score" class="panel-title dark-text"> <strong>{% trans "Summary" %}</strong>                                                    
+                </div>
+                <div class="panel-body">
+                    <div class="container">
+                            {% trans "<h3 class='text-left dark-text'>the projects selected have been  <strong>Analyzed ! </strong> and share you. </h3>" %}
+                            <p class='text-left dark-text'> {% trans "you can find the  <span style='color:green;font-weight:bold'> Google Sheets</span>  file on your your  <span style='color:yellow;font-weight:bold'> Google Drive</span>  !!! " %}</p> 
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    <!-- /POINTS PANNEL -->
+  <!-- Score in detail -->
+    <div class="col-md-12 col-xd-12" >
+        <section id="dashboard" style="padding-top:0px !important;">
+            <div class="container-fluid" id="stepfour">
+                <div class="row marketing">
+                    <div class="jumbotron">
+                        <div class="table-responsive">
+                            <table class="table tablesorter">
+                                <thead>
+                                    <tr style="font-size: 12; " >
+                                        <th >{% trans "filename" %}</th>
+                                        <th >{% trans "level" %}</th>
+                                        <th >{% trans "score" %}</th>
+                                        <th >{% trans "abstraction" %}</th>
+                                        <th >{% trans "parallelization" %}</th>
+                                        <th >{% trans "logic" %}</th>
+                                        <th >{% trans "synchronization" %}</th>
+                                        <th >{% trans "flowControl" %}</th>
+                                        <th >{% trans "userInteractivity" %}</th>
+                                        <th >{% trans "dataRepresentation" %}</th>
+                                        <th >{% trans "spriteNaming" %}</th>
+                                        <th >{% trans "initialization" %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for obj in diccionary %}
+                                    <tr style="font-size: 11;" >
+                                        <td >{{ obj.filename }}</td>
+
+                                        {% if obj.score >= 15 %}
+                                        <td >{% trans "Master" %}</td>
+                                        {% elif obj.score > 7 %}
+                                        <td >{% trans "Developing" %}</td>
+                                        {% else %}
+                                        <td >{% trans "Basic" %}</td>
+                                        {% endif %}
+
+                                        <td >{{ obj.score }}</td>
+                                        <td >{{ obj.abstraction }}</td>
+                                        <td >{{ obj.parallelization }}</td>
+                                        <td >{{ obj.logic }}</td>
+                                        <td >{{ obj.synchronization }}</td>
+                                        <td >{{ obj.flowControl }}</td>
+                                        <td >{{ obj.userInteractivity }}</td>
+                                        <td >{{ obj.dataRepresentation }}</td>
+                                        <td >{{ obj.spriteNaming }}</td>
+                                        <td >{{ obj.initialization }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                             </table>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+        </section>
+     </div>
+</div>
+
+    <footer class="footer grey-bg">
+        <div class="container">
+           {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+            <!-- SOCIAL ICONS -->
+            <ul class="social-icons">
+                <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
+                </li>
+                <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

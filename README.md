@@ -8,56 +8,51 @@ You can try a beta version of drScratch at http://drscratch.org
 ------------------------------------
 
 +Dependencies
- +============
  +
  +* Python 2.7.14
- +* Django 1.7
+ +* Django 1.7 python frameWork
  +* kurt python module
  +* hairball python module
-
-
-
-
+ +* gspread python module
+ +* oauth2client python module
+ 
++====================================================
 +============= kurt
-
 https://pypi.python.org/pypi/kurt
 Library for reading/writing MIT's Scratch file format.
 Kurt is a Python library for working with Scratch project files.
 ## Installation
 pip install kurt
 
-
-
-
++====================================================
 +============= hairball
-
 https://pypi.python.org/pypi/hairball/0.3
 https://github.com/ucsb-cs-education/hairball
 Hairball is a plugin-able framework useful for static analysis of Scratch projects.
 ## Installation
 pip install hairball
+Once you installed the original hairball distribution you should replace its files with the ones in our fork: https://github.com/jemole/hairball
 
-
-
-
++====================================================
 +============== Django
 URL : https://docs.djangoproject.com/en/1.7/
 URL TUTORIAL : https://docs.djangoproject.com/en/1.7/intro/tutorial01/
-
 $ python manage.py makemigrations app
-        Migrations for 'polls':
-        0001_initial.py:
-            - Create model Question
-            - Add field question to choice
-            
 $ python manage.py sqlmigrate app 0001
-        BEGIN;
-        CREATE TABLE "polls_question" ("id" serial NOT NULL PRIMARY KEY,);
-        ALTER TABLE "polls_choice" ADD COLUMN "question_id" integer NOT NULL;
-        COMMIT;
-
 $ python manage.py migrate
-        Operations to perform:
-        Apply all migrations: admin, contenttypes, polls, auth, sessions
-        Running migrations:
-        Applying <migration name>... OK
+$ python manage.py runserver
+
++====================================================
++============== gspread oauth2client ( Python Lib )
+URL : https://github.com/burnash/gspread
+URL TUTORIAL : https://github.com/burnash/gspread
+## Installation
+$ pip install gspread oauth2client 
+
++====================================================
++============== Google Drive and Google Sheets API
+URL : https://console.developers.google.com
+-Login
+-habilitar Google Drive API
+-habilitar Google Sheets API
+-Credenciales / CREAR miembro (cuentas de servicios)

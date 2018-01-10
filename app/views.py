@@ -18,6 +18,7 @@ from django.utils.translation import ugettext as _
 from django.utils.encoding import force_bytes
 from django.db.models import Avg
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
+from django.views import generic
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Teacher, Student, Classroom, Stats
@@ -42,6 +43,8 @@ import csv
 import kurt
 import zipfile
 from zipfile import ZipFile
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 #Global variables
 pMastery = "hairball -p mastery.Mastery "
@@ -84,6 +87,15 @@ def error500(request):
     response = render_to_response('500.html', {},
                                   context_instance = RC(request))
     return response
+
+#-------------------------------------------------------------------------
+#-------------------------------------------------------------------------
+
+
+
+#-------------------------------------------------------------------------
+#-------------------------------------------------------------------------
+
 
 #_______________________ TO UNREGISTERED USER ___________________________#
 
@@ -143,10 +155,48 @@ def selector(request):
                     return render_to_response("upload/dashboard-unregistered-developing.html", d)
                 else:
                     return render_to_response("upload/dashboard-unregistered-basic.html", d)
+        elif '_path' in request.POST:
+            if (request.POST['mailPath'] != '' and len(request.FILES.getlist('zipPath'))>0): 
+                mail = str(request.POST['mailPath'])
+                scope = ['https://www.googleapis.com/auth/drive']
+                GoogleAuth = ServiceAccountCredentials.from_json_keyfile_name('client_secret1.json', scope)
+                client = gspread.authorize(GoogleAuth)
+                x = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                nameFile = 'PRG '+ x 
+                sh = client.create(nameFile)
+                sh.share('valeria.leon@progracademy.org', perm_type='user', role='writer')
+                sh.share('bvpenaloza.11@gmail.com', perm_type='user', role='writer')
+                sh.share(mail, perm_type='user', role='writer')
+                sheet = client.open(nameFile).sheet1
+                listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript']
+                updateSheet(listValues, 1, sheet)
+                d = ''
+                row = 2  
+                diccionary = []
+                for file in request.FILES.getlist('zipPath'):
+                    d = uploadUnregisteredSecond(request,file)
+                    f = File.objects.latest('id')
+                    diccionary.append(f)
+                    level='basic'
+                    if (int(f.score) >= 15):
+                        level='master'
+                    elif (int(f.score) > 7):
+                        level='developing'
+                    listValues = [f.id, f.filename, f.method, f.time, f.language, level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript]
+                    updateSheet(listValues, row, sheet)
+                    row += 1
+                return render_to_response("upload/dashboard-unregistered-folder.html", {'diccionary': diccionary} )
+                    
+            return HttpResponseRedirect('/') 
     else:
         return HttpResponseRedirect('/')
 
 
+def updateSheet(listValues, row, sheet):
+    colum = 1
+    for token in listValues:
+        sheet.update_cell(row, colum, token)
+        colum += 1
 
 def handler_upload(fileSaved, counter):
     """ Necessary to uploadUnregistered"""
@@ -172,7 +222,6 @@ def handler_upload(fileSaved, counter):
     else:
         file_name = fileSaved
         return file_name
-
 
 def checkVersion(fileName):
     extension = fileName.split('.')[-1]
@@ -228,10 +277,11 @@ def uploadUnregistered(request):
         counter = 0
         file_name = handler_upload(fileSaved, counter)
 
+
         with open(file_name, 'wb+') as destination:
             for chunk in file.chunks():
                 destination.write(chunk)
-
+                
         #Create 2.0Scratch's File
         file_name = changeVersion(request, file_name)
 
@@ -266,6 +316,56 @@ def changeVersion(request, file_name):
     p.save()
     file_name = file_name.split('.')[0] + '.sb2'
     return file_name
+
+
+
+def uploadUnregisteredSecond(request,file):
+    """Upload file from form POST for unregistered users"""
+    if request.method == 'POST':
+        #Revise the form in main
+        # Create DB of files
+        now = datetime.now()
+        method = "project"
+        fileName = File (filename = file.name.encode('utf-8'),
+                        organization = "",
+                        method = method , time = now,
+                        score = 0, abstraction = 0, parallelization = 0,
+                        logic = 0, synchronization = 0, flowControl = 0,
+                        userInteractivity = 0, dataRepresentation = 0,
+                        spriteNaming = 0 ,initialization = 0,
+                        deadCode = 0, duplicateScript = 0)
+        fileName.save()
+        dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+        fileSaved = dir_zips + str(fileName.id) + ".sb2"
+
+        # Version of Scratch 1.4Vs2.0
+        version = checkVersion(fileName.filename)
+        if version == "1.4":
+            fileSaved = dir_zips + str(fileName.id) + ".sb"
+        else:
+            fileSaved = dir_zips + str(fileName.id) + ".sb2"
+
+        # Create log
+        pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+        logFile = open (pathLog + "logFile.txt", "a")
+        logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
+        str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
+        "Time: " + str(fileName.time) + "\n")
+
+        # Save file in server
+        counter = 0
+        file_name = handler_upload(fileSaved, counter)
+
+        with open(file_name, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+
+        #Create 2.0Scratch's File
+        file_name = changeVersion(request, file_name)
+
+        # Analyze the scratch project
+        d = analyzeProject(request, file_name, fileName)
+    return d
 
 
 

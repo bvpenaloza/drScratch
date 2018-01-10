@@ -140,7 +140,16 @@
                                     {% trans "2. If you have your <span class='colored-text'><a data-toggle='modal' href='#modalProject'>project</a></span> downloaded in the computer you can analyze it here:" %}
                                     {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
                                     <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my project" %}</button>
-                                    {% csrf_token %}                                    
+                                    {% csrf_token %} 
+                                    
+
+                                    {% csrf_token %}
+                                    <br></br>
+                                    {% trans "3. If you have many <span class='colored-text'><a data-toggle='modal' href='#modalProject'>projects</a></span> select the folder in the computer you can analyze their and type your mail for sharing you the <span style='color:green;font-weight:bold'> Google Sheets</span> file with analyzed projects:" %}
+                                    {% trans '<input name="mailPath" id="mailPath" class="form-control input-box placeholder" placeholder="example@mail.com" type="text" style="margin-bottom: 0px !important;">' %}
+                                    {% trans "<input id='zipPath' name='zipPath' type='file' class='filestyle' data-buttonText='Choose Folder' multiple webkitdirectory directory checked>" %}
+                                    <button id="path" name='_path' type="submit" class="btn btn-primary standard-button">{% trans "Analyze all projects" %}</button>
+                                    {% csrf_token %}
                                 
                                 </form>
                                 
@@ -690,7 +699,6 @@
     <script src="static/app/scripts/jquery_main.js"></script>
     <script src="static/app/scripts/jquery.ajaxchimp.min.js"></script>
     <script src="static/app/scripts/progress-bar.js"></script>
-
     <!-- GOGLE MAP -->
     <!--
     <script src="https:/maps.googleapis.com/maps/api/js"></script><script src="https:/maps.gstatic.com/maps-api-v3/api/js/19/5/intl/es_ALL/main.js"></script>
