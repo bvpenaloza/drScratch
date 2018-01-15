@@ -7,7 +7,7 @@ You can try a beta version of drScratch at http://drscratch.org
 
 ------------------------------------
 
-+ Dependencies
+## Dependencies
  - Python 2.7.14
  - Django 1.7 python frameWork
  - kurt python module
@@ -15,8 +15,8 @@ You can try a beta version of drScratch at http://drscratch.org
  - gspread python module
  - oauth2client python module
 
+------------------------------------
 
-+====================================================
 ## ASSEMBLE THE PROJECT
 
 >  1.- Install Python 2.7.14
@@ -36,29 +36,38 @@ You can try a beta version of drScratch at http://drscratch.org
 +====================================================
 
 ###### + [(2)STEPS] ======= Pip install/Python 2.7
+```
 1.- Open cmd as admin.
 2.- Go to scripts folder: C:\Python27\Scripts
 3.- Type pip install "package name".
 or
 1.- add path to environment variables
 2.- Type pip install "package name".
+```
 
 ###### + [(4)STEPS] ======= Requirements
+```
 $ cd drScratch
 $ pip install -r requirements.txt
+```
 
 ###### + [(5)STEPS] ======= yolk (for check the requirements)
+```
 $ pip install yolk
 $ yolk -l
+```
 
 ###### + [(6)STEPS] ======= Django
+```
 URL : https://docs.djangoproject.com/en/1.7/
 URL TUTORIAL : https://docs.djangoproject.com/en/1.7/intro/tutorial01/
 $ python manage.py makemigrations app
 $ python manage.py sqlmigrate app 0001
 $ python manage.py migrate
 $ python manage.py runserver
+```
 
+------------------------------------
 
 ## EXTRA INFORMATION 
 
