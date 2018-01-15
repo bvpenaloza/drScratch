@@ -7,14 +7,13 @@ You can try a beta version of drScratch at http://drscratch.org
 
 ------------------------------------
 
-+Dependencies
- +
- +* Python 2.7.14
- +* Django 1.7 python frameWork
- +* kurt python module
- +* hairball python module
- +* gspread python module
- +* oauth2client python module
++ Dependencies
+ - Python 2.7.14
+ - Django 1.7 python frameWork
+ - kurt python module
+ - hairball python module
+ - gspread python module
+ - oauth2client python module
 
 
 +====================================================
@@ -22,18 +21,19 @@ You can try a beta version of drScratch at http://drscratch.org
 
 >  1.- Install Python 2.7.14
 >
->  2.- Follow steps [ Pip install - Python 2.7 - Windows 7/10 ]
+>  2.- Follow steps [ Pip install - Python 2.7 - Windows 7/10 ] [(2)STEPS] 
 >  
 >  3.- cd (choose or make a folder)
 >
->  4.- Follow steps [ Requirements ]
+>  4.- Follow steps [ Requirements ] [(4)STEPS] 
 >
->  5.- Follow steps [ yolk (for check the requirements) ]
+>  5.- Follow steps [ yolk (for check the requirements) ] [(5)STEPS] 
 >
->  6.- Follow steps [ Django (django configuration) ]
+>  6.- Follow steps [ Django (django configuration) ] [(6)STEPS] 
 >
 >  7.- drScratch.exe - (run local server) 
 
++====================================================
 
 ###### + [(2)STEPS] ======= Pip install/Python 2.7
 1.- Open cmd as admin.
@@ -65,18 +65,25 @@ $ python manage.py runserver
 ###### kurt
 ```
 https://pypi.python.org/pypi/kurt
-__ Library for reading/writing MIT's Scratch file format.__
-__ Kurt is a Python library for working with Scratch project files.__
+Library for reading/writing MIT's Scratch file format.
+Kurt is a Python library for working with Scratch project files.
 pip install kurt
 ```
 
 ###### hairball
 ```
-https://pypi.python.org/pypi/hairball/0.3
-https://github.com/ucsb-cs-education/hairball
-__ Hairball is a plugin-able framework useful for static analysis of Scratch projects. __
-pip install hairball
-__ Once you installed the original hairball distribution you should replace its files with the ones in our fork: https://github.com/jemole/hairball __
+URL:https://pypi.python.org/pypi/hairball/0.3
+URL:https://github.com/ucsb-cs-education/hairball
+
+Hairball is a plugin-able framework useful for 
+static analysis of Scratch projects.
+
+$ pip install hairball
+
+Once you installed the original hairball distribution
+you should replace its files with the ones in our
+fork
+URL: https://github.com/jemole/hairball
 ```
 
 ###### gspread oauth2client ( Python Lib )
@@ -97,7 +104,9 @@ Credenciales / CREAR miembro (cuentas de servicios)
 
 ###### Compilando .exe para hacerlo modo escritorio
 ```
-.exe
+Requiere Visual Studio Compiler C++ 
+URL:https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
 $ cl /EHcs main.cpp 
+or
 $ cl /EHcs main.cpp /Fe:drScratch
 ```
