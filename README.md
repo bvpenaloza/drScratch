@@ -18,7 +18,7 @@ You can try a beta version of drScratch at http://drscratch.org
 
 
 +====================================================
-+============== ASSEMBLE THE PROJECT ================ 
+## ASSEMBLE THE PROJECT
 
 >  1.- Install Python 2.7.14
 >
@@ -34,28 +34,24 @@ You can try a beta version of drScratch at http://drscratch.org
 >
 >  7.- drScratch.exe - (run local server) 
 
-+====================================================
-+====================================================
-+ [(2)STEPS] ======= Pip install - Python 2.7 - Windows 7/10
+
+### + [(2)STEPS] ======= Pip install/Python 2.7
 1.- Open cmd as admin.
 2.- Go to scripts folder: C:\Python27\Scripts
 3.- Type pip install "package name".
 or
 1.- add path to environment variables
 2.- Type pip install "package name".
-+====================================================
-+====================================================
-+ [(4)STEPS] ======= Requirements
+
+### + [(4)STEPS] ======= Requirements
 $ cd drScratch
 $ pip install -r requirements.txt
-+====================================================
-+====================================================
-+ [(5)STEPS] ======= yolk (for check the requirements)
+
+### + [(5)STEPS] ======= yolk (for check the requirements)
 $ pip install yolk
 $ yolk -l
-+====================================================
-+====================================================
-+ [(6)STEPS] ======= Django
+
+### + [(6)STEPS] ======= Django
 URL : https://docs.djangoproject.com/en/1.7/
 URL TUTORIAL : https://docs.djangoproject.com/en/1.7/intro/tutorial01/
 $ python manage.py makemigrations app
@@ -73,42 +69,44 @@ $ python manage.py runserver
 +#####################################################
 
 +====================================================
-+============= kurt
+## kurt
+```
 https://pypi.python.org/pypi/kurt
-Library for reading/writing MIT's Scratch file format.
-Kurt is a Python library for working with Scratch project files.
-## Installation
+__ Library for reading/writing MIT's Scratch file format.__
+__ Kurt is a Python library for working with Scratch project files.__
 pip install kurt
-
+```
 +====================================================
-+============= hairball
+## hairball
+```
 https://pypi.python.org/pypi/hairball/0.3
 https://github.com/ucsb-cs-education/hairball
-Hairball is a plugin-able framework useful for static analysis of Scratch projects.
-## Installation
+__ Hairball is a plugin-able framework useful for static analysis of Scratch projects. __
 pip install hairball
-Once you installed the original hairball distribution you should replace its files with the ones in our fork: https://github.com/jemole/hairball
-
+__ Once you installed the original hairball distribution you should replace its files with the ones in our fork: https://github.com/jemole/hairball __
+```
 +====================================================
-+============== gspread oauth2client ( Python Lib )
+## gspread oauth2client ( Python Lib )
+```
 URL : https://github.com/burnash/gspread
 URL TUTORIAL : https://github.com/burnash/gspread
-## Installation
 $ pip install gspread oauth2client 
-
+```
 +====================================================
-+============== Google Drive and Google Sheets API
+## Google Drive and Google Sheets API
+```
 URL : https://console.developers.google.com
--Login
--habilitar Google Drive API
--habilitar Google Sheets API
--Credenciales / CREAR miembro (cuentas de servicios)
-
+Login
+habilitar Google Drive API
+habilitar Google Sheets API
+Credenciales / CREAR miembro (cuentas de servicios)
+```
 +====================================================
-+============== Compilando .exe para hacerlo modo escritorio
+## Compilando .exe para hacerlo modo escritorio
+```
 .exe
-cl /EHcs main.cpp 
-cl /EHcs main.cpp /Fe:drScratch
-
+$ cl /EHcs main.cpp 
+$ cl /EHcs main.cpp /Fe:drScratch
+```
 +#####################################################
 +#####################################################
