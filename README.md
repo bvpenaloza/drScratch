@@ -20,19 +20,19 @@ You can try a beta version of drScratch at http://drscratch.org
 +====================================================
 +============== ASSEMBLE THE PROJECT ================ 
 
-  1.- Install Python 2.7.14
-
-  2.- Follow steps [ Pip install - Python 2.7 - Windows 7/10 ]
-  
-  3.- cd (choose or make a folder)
-
-  4.- Follow steps [ Requirements ]
-
-  5.- Follow steps [ yolk (for check the requirements) ]
-
-  6.- Follow steps [ Django (django configuration) ]
-
-  7.- drScratch.exe - (run local server) 
+>  1.- Install Python 2.7.14
+>
+>  2.- Follow steps [ Pip install - Python 2.7 - Windows 7/10 ]
+>  
+>  3.- cd (choose or make a folder)
+>
+>  4.- Follow steps [ Requirements ]
+>
+>  5.- Follow steps [ yolk (for check the requirements) ]
+>
+>  6.- Follow steps [ Django (django configuration) ]
+>
+>  7.- drScratch.exe - (run local server) 
 
 +====================================================
 +====================================================
