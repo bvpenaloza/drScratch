@@ -35,7 +35,7 @@ You can try a beta version of drScratch at http://drscratch.org
 >  7.- drScratch.exe - (run local server) 
 
 
-### + [(2)STEPS] ======= Pip install/Python 2.7
+###### + [(2)STEPS] ======= Pip install/Python 2.7
 1.- Open cmd as admin.
 2.- Go to scripts folder: C:\Python27\Scripts
 3.- Type pip install "package name".
@@ -43,41 +43,34 @@ or
 1.- add path to environment variables
 2.- Type pip install "package name".
 
-### + [(4)STEPS] ======= Requirements
+###### + [(4)STEPS] ======= Requirements
 $ cd drScratch
 $ pip install -r requirements.txt
 
-### + [(5)STEPS] ======= yolk (for check the requirements)
+###### + [(5)STEPS] ======= yolk (for check the requirements)
 $ pip install yolk
 $ yolk -l
 
-### + [(6)STEPS] ======= Django
+###### + [(6)STEPS] ======= Django
 URL : https://docs.djangoproject.com/en/1.7/
 URL TUTORIAL : https://docs.djangoproject.com/en/1.7/intro/tutorial01/
 $ python manage.py makemigrations app
 $ python manage.py sqlmigrate app 0001
 $ python manage.py migrate
 $ python manage.py runserver
-+====================================================
-+====================================================
 
 
+## EXTRA INFORMATION 
 
-
-+#####################################################
-+################ EXTRA INFORMATION ##################
-+#####################################################
-
-+====================================================
-## kurt
+###### kurt
 ```
 https://pypi.python.org/pypi/kurt
 __ Library for reading/writing MIT's Scratch file format.__
 __ Kurt is a Python library for working with Scratch project files.__
 pip install kurt
 ```
-+====================================================
-## hairball
+
+###### hairball
 ```
 https://pypi.python.org/pypi/hairball/0.3
 https://github.com/ucsb-cs-education/hairball
@@ -85,15 +78,15 @@ __ Hairball is a plugin-able framework useful for static analysis of Scratch pro
 pip install hairball
 __ Once you installed the original hairball distribution you should replace its files with the ones in our fork: https://github.com/jemole/hairball __
 ```
-+====================================================
-## gspread oauth2client ( Python Lib )
+
+###### gspread oauth2client ( Python Lib )
 ```
 URL : https://github.com/burnash/gspread
 URL TUTORIAL : https://github.com/burnash/gspread
 $ pip install gspread oauth2client 
 ```
-+====================================================
-## Google Drive and Google Sheets API
+
+###### Google Drive and Google Sheets API
 ```
 URL : https://console.developers.google.com
 Login
@@ -101,12 +94,10 @@ habilitar Google Drive API
 habilitar Google Sheets API
 Credenciales / CREAR miembro (cuentas de servicios)
 ```
-+====================================================
-## Compilando .exe para hacerlo modo escritorio
+
+###### Compilando .exe para hacerlo modo escritorio
 ```
 .exe
 $ cl /EHcs main.cpp 
 $ cl /EHcs main.cpp /Fe:drScratch
 ```
-+#####################################################
-+#####################################################
