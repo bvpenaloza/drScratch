@@ -1,4 +1,4 @@
-drScratch
+# Dr Scratch
 =========
 
 drScratch is an analytical tool that evaluates your Scratch projects in a variety of computational areas to provide feedback on aspects such as abstraction, logical thinking, synchronization, parallelization, flow control, user interactivity and data representation. This analyzer is a helpful tool to evaluate your own projects, or those of your Scratch students.
@@ -37,26 +37,26 @@ You can try a beta version of drScratch at http://drscratch.org
 
 +====================================================
 
-###### + [(2)STEPS] ======= Pip install/Python 2.7
+## [(2)STEPS] ======= Pip install/Python 2.7
 - URL : http://www.aaronstannard.com/how-to-setup-a-proper-python-environment-on-windows/
 ```
 1.- add path to environment variables
 2.- path = "C:\Python27\Scripts;C:\Python27"
 ```
 
-###### + [(4)STEPS] ======= Requirements
+## [(4)STEPS] ======= Requirements
 ```
 $ cd drScratch (go to the root folder of the project)
 $ pip install -r requirements.txt
 ```
 
-###### + [(5)STEPS] ======= yolk (for check the requirements)
+## [(5)STEPS] ======= yolk (for check the requirements)
 - URL: https://pypi.python.org/pypi/yolk/0.4.3
 ```
 $ yolk -l
 ```
 
-###### + [(6)STEPS] ======= Django
+## [(6)STEPS] ======= Django
 
 - URL : https://docs.djangoproject.com/en/1.7/
 - URL TUTORIAL : https://docs.djangoproject.com/en/1.7/intro/tutorial01/
@@ -69,7 +69,7 @@ $ python manage.py runserver
 
 ------------------------------------
 
-# EXTRA INFORMATION 
+# Technical Details  
 
 ## kurt
 - URL : https://pypi.python.org/pypi/kurt
