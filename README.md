@@ -44,6 +44,7 @@ You can try a beta version of drScratch at http://drscratch.org
 ```
 
 ## [Step 5] === Requirements
+- URL : http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/
 ```
 $ cd drScratch (go to the root folder of the project)
 $ pip install -r requirements.txt
