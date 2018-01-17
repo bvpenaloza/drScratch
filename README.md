@@ -69,48 +69,48 @@ $ python manage.py runserver
 
 ------------------------------------
 
-## EXTRA INFORMATION 
+# EXTRA INFORMATION 
 
-#### kurt
-- https://pypi.python.org/pypi/kurt
-- Library for reading/writing MIT's Scratch file format.
-- Kurt is a Python library for working with Scratch project files.
+## kurt
+- URL : https://pypi.python.org/pypi/kurt
+
+Library for reading/writing MIT's Scratch file format. Kurt is a Python library for working with Scratch project files.
+
 ```
 pip install kurt
 ```
 
-#### hairball
-
+## hairball
 - URL : https://pypi.python.org/pypi/hairball/0.3
 - URL : https://github.com/ucsb-cs-education/hairball
 
-- Hairball is a plugin-able framework useful for 
-- static analysis of Scratch projects.
+Hairball is a plugin-able framework useful for static analysis of Scratch projects.
+
 ```
 $ pip install hairball
 ```
-- Once you installed the original hairball distribution
-- you should replace its files with the ones in our
-- fork
-- URL: https://github.com/jemole/hairball
 
-#### gspread oauth2client ( Python Lib )
+Once you installed the original hairball distribution you should replace its files with the ones in our fork (https://github.com/jemole/hairball)
+
+## gspread oauth2client ( Python Lib )
 - URL : https://github.com/burnash/gspread
 ```
 $ pip install gspread oauth2client 
 ```
 
-#### Google Drive and Google Sheets API
+## Google Drive and Google Sheets API
 - URL : https://console.developers.google.com
-- URL TUTORIAL : 
-- Login
-- habilitar Google Drive API
-- habilitar Google Sheets API
-- Credenciales / CREAR miembro (cuentas de servicios)
+- URL TUTORIAL : https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html 
+```
+Login
+habilitar Google Drive API
+habilitar Google Sheets API
+Credenciales / CREAR miembro (cuentas de servicios)
+```
 
+## Compilando .exe para hacerlo modo escritorio
+Requiere Visual Studio Compiler C++ 
 
-#### Compilando .exe para hacerlo modo escritorio
-- Requiere Visual Studio Compiler C++ 
 - URL : https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
 ```
 $ cl /EHcs main.cpp 
