@@ -50,13 +50,13 @@ $ cd drScratch (go to the root folder of the project)
 $ pip install -r requirements.txt
 ```
 
-## [Step 7] === yolk (for check the requirements)
+## [Step 6] === yolk (for check the requirements)
 - URL: https://pypi.python.org/pypi/yolk/0.4.3
 ```
 $ yolk -l
 ```
 
-## [Step 3] === Django
+## [Step 7] === Django
 
 - URL : https://docs.djangoproject.com/en/1.7/
 - URL TUTORIAL : https://docs.djangoproject.com/en/1.7/intro/tutorial01/
