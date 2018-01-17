@@ -159,7 +159,7 @@ def selector(request):
             if (request.POST['mailPath'] != '' and len(request.FILES.getlist('zipPath'))>0): 
                 mail = str(request.POST['mailPath'])
                 scope = ['https://www.googleapis.com/auth/drive']
-                GoogleAuth = ServiceAccountCredentials.from_json_keyfile_name('client_secret1.json', scope)
+                GoogleAuth = ServiceAccountCredentials.from_json_keyfile_name('client_secret2.json', scope)
                 client = gspread.authorize(GoogleAuth)
                 x = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 nameFile = 'PRG '+ x 

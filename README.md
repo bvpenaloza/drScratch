@@ -19,41 +19,40 @@ You can try a beta version of drScratch at http://drscratch.org
 
 ## ASSEMBLE THE PROJECT
 
->  1.- Install Python 2.7.14
+>  1.- Install Git ( https://git-scm.com )
 >
->  2.- [(2)STEPS] Follow steps [ Pip install - Python 2.7 - Windows 7/10 ] 
+>  2.- Install Python 2.7.14 
 >
->  3.- cd (choose or make a folder)
+>  3.- [(2)STEPS] Follow steps [ Pip install - Python 2.7 - Windows 7/10 ] 
 >
->  4.- [(4)STEPS]Follow steps [ Requirements ]  
+>  4.- cd (choose or make a folder) and copy the project
 >
->  5.- [(5)STEPS] Follow steps [ yolk (for check the requirements) ] 
+>  5.- [(4)STEPS]Follow steps [ Requirements ]  
 >
->  6.- [(6)STEPS] Follow steps [ Django (django configuration) ] 
+>  6.- [(5)STEPS] Follow steps [ yolk (for check the requirements) ] 
 >
->  7.- drScratch.exe - (run local server) 
+>  7.- [(6)STEPS] Follow steps [ Django (django configuration) ] 
+>
+>  8.- drScratch.exe - (run local server) 
 
 +====================================================
 
 ###### + [(2)STEPS] ======= Pip install/Python 2.7
 ```
-1.- Open cmd as admin.
-2.- Go to scripts folder: C:\Python27\Scripts
-3.- Type pip install "package name".
-or
+URL : http://www.aaronstannard.com/how-to-setup-a-proper-python-environment-on-windows/
 1.- add path to environment variables
-2.- Type pip install "package name".
+2.- path = "C:\Python27\Scripts;C:\Python27"
 ```
 
 ###### + [(4)STEPS] ======= Requirements
 ```
-$ cd drScratch
+$ cd drScratch (go to the root folder of the project)
 $ pip install -r requirements.txt
 ```
 
 ###### + [(5)STEPS] ======= yolk (for check the requirements)
 ```
-$ pip install yolk
+URL: https://pypi.python.org/pypi/yolk/0.4.3
 $ yolk -l
 ```
 
@@ -71,7 +70,7 @@ $ python manage.py runserver
 
 ## EXTRA INFORMATION 
 
-###### kurt
+##### kurt
 ```
 https://pypi.python.org/pypi/kurt
 Library for reading/writing MIT's Scratch file format.
@@ -79,10 +78,10 @@ Kurt is a Python library for working with Scratch project files.
 pip install kurt
 ```
 
-###### hairball
+##### hairball
 ```
-URL:https://pypi.python.org/pypi/hairball/0.3
-URL:https://github.com/ucsb-cs-education/hairball
+URL : https://pypi.python.org/pypi/hairball/0.3
+URL : https://github.com/ucsb-cs-education/hairball
 
 Hairball is a plugin-able framework useful for 
 static analysis of Scratch projects.
@@ -95,26 +94,27 @@ fork
 URL: https://github.com/jemole/hairball
 ```
 
-###### gspread oauth2client ( Python Lib )
+##### gspread oauth2client ( Python Lib )
 ```
 URL : https://github.com/burnash/gspread
 URL TUTORIAL : https://github.com/burnash/gspread
 $ pip install gspread oauth2client 
 ```
 
-###### Google Drive and Google Sheets API
+##### Google Drive and Google Sheets API
 ```
 URL : https://console.developers.google.com
+URL TUTORIAL : 
 Login
 habilitar Google Drive API
 habilitar Google Sheets API
 Credenciales / CREAR miembro (cuentas de servicios)
 ```
 
-###### Compilando .exe para hacerlo modo escritorio
+##### Compilando .exe para hacerlo modo escritorio
 ```
 Requiere Visual Studio Compiler C++ 
-URL:https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
+URL : https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
 $ cl /EHcs main.cpp 
 or
 $ cl /EHcs main.cpp /Fe:drScratch

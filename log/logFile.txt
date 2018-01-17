@@ -178,3 +178,7 @@ FileName: prueba.sb2			ID: 100			Method: project			Time: 2018-01-14 23:51:11.659
 FileName: prueba - copia.sb2			ID: 101			Method: project			Time: 2018-01-14 23:54:04.605000
 FileName: prueba.sb2			ID: 102			Method: project			Time: 2018-01-14 23:54:17.106000
 FileName: prueba.sb2			ID: 103			Method: project			Time: 2018-01-15 00:00:19.365000
+FileName: prueba.sb2			ID: 1			Method: project			Time: 2018-01-16 18:06:13.632000
+FileName: prueba.sb2			ID: 2			Method: project			Time: 2018-01-17 01:22:50.136000
+FileName: prueba - copia.sb2			ID: 3			Method: project			Time: 2018-01-17 01:23:24.616000
+FileName: prueba.sb2			ID: 4			Method: project			Time: 2018-01-17 01:23:38.576000
