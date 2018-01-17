@@ -110,6 +110,7 @@ Credenciales / CREAR miembro (cuentas de servicios)
 
 ## Compilando .exe para hacerlo modo escritorio
 - URL : https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
+
 Requiere Visual Studio Compiler C++ 
 
 ```
