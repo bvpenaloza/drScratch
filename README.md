@@ -50,7 +50,7 @@ $ cd drScratch (go to the root folder of the project)
 $ pip install -r requirements.txt
 ```
 
-## [Step 6] === yolk (for check the requirements)
+## [Step 7] === yolk (for check the requirements)
 - URL: https://pypi.python.org/pypi/yolk/0.4.3
 ```
 $ yolk -l
@@ -109,9 +109,9 @@ Credenciales / CREAR miembro (cuentas de servicios)
 ```
 
 ## Compilando .exe para hacerlo modo escritorio
+- URL : https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
 Requiere Visual Studio Compiler C++ 
 
-- URL : https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
 ```
 $ cl /EHcs main.cpp 
 or
