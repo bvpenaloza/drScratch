@@ -38,8 +38,8 @@ You can try a beta version of drScratch at http://drscratch.org
 +====================================================
 
 ###### + [(2)STEPS] ======= Pip install/Python 2.7
+- URL : http://www.aaronstannard.com/how-to-setup-a-proper-python-environment-on-windows/
 ```
-URL : http://www.aaronstannard.com/how-to-setup-a-proper-python-environment-on-windows/
 1.- add path to environment variables
 2.- path = "C:\Python27\Scripts;C:\Python27"
 ```
@@ -51,15 +51,16 @@ $ pip install -r requirements.txt
 ```
 
 ###### + [(5)STEPS] ======= yolk (for check the requirements)
+- URL: https://pypi.python.org/pypi/yolk/0.4.3
 ```
-URL: https://pypi.python.org/pypi/yolk/0.4.3
 $ yolk -l
 ```
 
 ###### + [(6)STEPS] ======= Django
+
+- URL : https://docs.djangoproject.com/en/1.7/
+- URL TUTORIAL : https://docs.djangoproject.com/en/1.7/intro/tutorial01/
 ```
-URL : https://docs.djangoproject.com/en/1.7/
-URL TUTORIAL : https://docs.djangoproject.com/en/1.7/intro/tutorial01/
 $ python manage.py makemigrations app
 $ python manage.py sqlmigrate app 0001
 $ python manage.py migrate
@@ -70,51 +71,48 @@ $ python manage.py runserver
 
 ## EXTRA INFORMATION 
 
-##### kurt
+#### kurt
+- https://pypi.python.org/pypi/kurt
+- Library for reading/writing MIT's Scratch file format.
+- Kurt is a Python library for working with Scratch project files.
 ```
-https://pypi.python.org/pypi/kurt
-Library for reading/writing MIT's Scratch file format.
-Kurt is a Python library for working with Scratch project files.
 pip install kurt
 ```
 
-##### hairball
+#### hairball
+
+- URL : https://pypi.python.org/pypi/hairball/0.3
+- URL : https://github.com/ucsb-cs-education/hairball
+
+- Hairball is a plugin-able framework useful for 
+- static analysis of Scratch projects.
 ```
-URL : https://pypi.python.org/pypi/hairball/0.3
-URL : https://github.com/ucsb-cs-education/hairball
-
-Hairball is a plugin-able framework useful for 
-static analysis of Scratch projects.
-
 $ pip install hairball
-
-Once you installed the original hairball distribution
-you should replace its files with the ones in our
-fork
-URL: https://github.com/jemole/hairball
 ```
+- Once you installed the original hairball distribution
+- you should replace its files with the ones in our
+- fork
+- URL: https://github.com/jemole/hairball
 
-##### gspread oauth2client ( Python Lib )
+#### gspread oauth2client ( Python Lib )
+- URL : https://github.com/burnash/gspread
 ```
-URL : https://github.com/burnash/gspread
-URL TUTORIAL : https://github.com/burnash/gspread
 $ pip install gspread oauth2client 
 ```
 
-##### Google Drive and Google Sheets API
-```
-URL : https://console.developers.google.com
-URL TUTORIAL : 
-Login
-habilitar Google Drive API
-habilitar Google Sheets API
-Credenciales / CREAR miembro (cuentas de servicios)
-```
+#### Google Drive and Google Sheets API
+- URL : https://console.developers.google.com
+- URL TUTORIAL : 
+- Login
+- habilitar Google Drive API
+- habilitar Google Sheets API
+- Credenciales / CREAR miembro (cuentas de servicios)
 
-##### Compilando .exe para hacerlo modo escritorio
+
+#### Compilando .exe para hacerlo modo escritorio
+- Requiere Visual Studio Compiler C++ 
+- URL : https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
 ```
-Requiere Visual Studio Compiler C++ 
-URL : https://msdn.microsoft.com/en-us/library/9s7c9wdw.aspx
 $ cl /EHcs main.cpp 
 or
 $ cl /EHcs main.cpp /Fe:drScratch
