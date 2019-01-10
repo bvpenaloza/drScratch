@@ -461,8 +461,8 @@ def sendRequestgetSB2(idProject, organization, method):
                      userInteractivity = 0, dataRepresentation = 0,
                      spriteNaming = 0 ,initialization = 0,
                      deadCode = 0, duplicateScript = 0, eventos = 0,
-                        puntuacion = 0, puntuaje = 0, mecanica = 0,
-                        dialogos = 0, acciones = 0, objetivo = 0)
+                     puntuacion = 0, puntuaje = 0, mecanica = 0,
+                     dialogos = 0, acciones = 0, objetivo = 0)
     fileName.save()
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
