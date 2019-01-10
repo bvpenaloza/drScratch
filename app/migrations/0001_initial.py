@@ -129,6 +129,13 @@ class Migration(migrations.Migration):
                 ('initialization', models.IntegerField()),
                 ('deadCode', models.IntegerField()),
                 ('duplicateScript', models.IntegerField()),
+                ('puntaje', models.IntegerField()),
+                ('dialogos', models.IntegerField()),
+                ('eventos', models.IntegerField()),
+                ('acciones', models.IntegerField()),
+                ('puntuacion', models.IntegerField()),
+                ('objetivo', models.IntegerField()),
+                ('mecanica', models.IntegerField()),
             ],
             options={
             },
