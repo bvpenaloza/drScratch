@@ -168,7 +168,7 @@ def selector(request):
                 sh.share('bvpenaloza.11@gmail.com', perm_type='user', role='writer')
                 sh.share(mail, perm_type='user', role='writer')
                 sheet = client.open(nameFile).sheet1
-                listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript']
+                listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript', 'Puntaje','Dialogos','Eventos','puntuacion','acciones','objetivo','mecanica' ]
                 updateSheet(listValues, 1, sheet)
                 d = ''
                 row = 2  
@@ -182,7 +182,7 @@ def selector(request):
                         level='master'
                     elif (int(f.score) > 7):
                         level='developing'
-                    listValues = [f.id, f.filename, f.method, f.time, f.language, level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript]
+                    listValues = [f.id, f.filename, f.method, f.time, f.language, level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript, f.puntaje, f.dialogos, f.eventos, f.puntuacion, f.acciones, f.objetivo, f.mecanica]
                     updateSheet(listValues, row, sheet)
                     row += 1
                 return render_to_response("upload/dashboard-unregistered-folder.html", {'diccionary': diccionary} )
@@ -254,7 +254,9 @@ def uploadUnregistered(request):
                         logic = 0, synchronization = 0, flowControl = 0,
                         userInteractivity = 0, dataRepresentation = 0,
                         spriteNaming = 0 ,initialization = 0,
-                        deadCode = 0, duplicateScript = 0)
+                        deadCode = 0, duplicateScript = 0, eventos = 0,
+                        puntuacion = 0, puntuaje = 0, mecanica = 0,
+                        dialogos = 0, acciones = 0, objetivo = 0)
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
         fileSaved = dir_zips + str(fileName.id) + ".sb2"
@@ -333,7 +335,9 @@ def uploadUnregisteredSecond(request,file):
                         logic = 0, synchronization = 0, flowControl = 0,
                         userInteractivity = 0, dataRepresentation = 0,
                         spriteNaming = 0 ,initialization = 0,
-                        deadCode = 0, duplicateScript = 0)
+                        deadCode = 0, duplicateScript = 0, eventos = 0,
+                        puntuacion = 0, puntuaje = 0, mecanica = 0,
+                        dialogos = 0, acciones = 0, objetivo = 0)
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
         fileSaved = dir_zips + str(fileName.id) + ".sb2"
@@ -456,7 +460,9 @@ def sendRequestgetSB2(idProject, organization, method):
                      logic = 0, synchronization = 0, flowControl = 0,
                      userInteractivity = 0, dataRepresentation = 0,
                      spriteNaming = 0 ,initialization = 0,
-                     deadCode = 0, duplicateScript = 0)
+                     deadCode = 0, duplicateScript = 0, eventos = 0,
+                        puntuacion = 0, puntuaje = 0, mecanica = 0,
+                        dialogos = 0, acciones = 0, objetivo = 0)
     fileName.save()
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
