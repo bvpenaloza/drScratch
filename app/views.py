@@ -1141,6 +1141,7 @@ def analyzeProject(request,file_name, fileName):
             file_name = list_file[0] + '\)' + list_file[1]
     
         #Request to hairball
+        metricPerceptivos = "hairball -p perceptivos.Perceptivos " + file_name
         metricMastery = "hairball -p mastery.Mastery " + file_name
         metricDuplicateScript = "hairball -p \
                                 duplicate.DuplicateScripts " + file_name
@@ -1154,6 +1155,7 @@ def analyzeProject(request,file_name, fileName):
         #                          checks.BroadcastReceive " + file_name
         #metricBlockCounts = "hairball -p blocks.BlockCounts " + file_name
         #Response from hairball
+        resultPerceptivos = os.popen(metricPerceptivos).read()
         resultMastery = os.popen(metricMastery).read()
         resultDuplicateScript = os.popen(metricDuplicateScript).read()
         resultSpriteNaming = os.popen(metricSpriteNaming).read()
@@ -1164,6 +1166,7 @@ def analyzeProject(request,file_name, fileName):
         #resultBlockCounts = os.popen(metricBlockCounts).read()
         #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
         #Create a dictionary with necessary information
+        dictionary.update(procPerceptivos(request,resultPerceptivos, fileName))
         dictionary.update(procMastery(request,resultMastery, fileName))
         dictionary.update(procDuplicateScript(resultDuplicateScript, fileName))
         dictionary.update(procSpriteNaming(resultSpriteNaming, fileName))
@@ -1213,6 +1216,22 @@ def translate(request,d, fileName):
 
 
 # __________________________ PROCESSORS _____________________________#
+
+def procPerceptivos(request, lines, filename):
+    """Perceptivos """
+    dic = {}
+    lineas = lineas.split('\n')
+    d = {}
+    d = ast.literal_eval(lineas[1])
+    #save in db
+    fileName.puntaje = d["Puntaje"]
+    fileName.dialogos = d["Dialogos"]
+    fileName.eventos = d["Eventos"]
+    fileName.puntuacion = d["Puntuacion"]
+    fileName.acciones = d["Acciones"]
+    fileName.objetivo = d["Objetivo"]
+    fileName.mecanica = d["Mecanica"]
+    fileName.save()
 
 def procMastery(request,lines, fileName):
     """Mastery"""
