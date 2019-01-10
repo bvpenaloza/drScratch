@@ -1226,7 +1226,7 @@ def translate(request,d, fileName):
 def procPerceptivos(request, lines, filename):
     """Perceptivos """
     dic = {}
-    lineas = lineas.split('\n')
+    lineas = lines.split('\n')
     d = {}
     d = ast.literal_eval(lineas[1])
     #save in db
