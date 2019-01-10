@@ -1147,7 +1147,7 @@ def analyzeProject(request,file_name, fileName):
             file_name = list_file[0] + '\)' + list_file[1]
     
         #Request to hairball
-        metricPerceptivos = "hairball -p perceptivos.Perceptivos " + file_name
+        metricPerceptivos = "hairball -d "+"C:\Users\johan\Desktop\drScratchPrg\plugins"+" -p perceptivos.Perceptivos " + file_name
         metricMastery = "hairball -p mastery.Mastery " + file_name
         metricDuplicateScript = "hairball -p \
                                 duplicate.DuplicateScripts " + file_name
@@ -1223,14 +1223,16 @@ def translate(request,d, fileName):
 
 # __________________________ PROCESSORS _____________________________#
 
-def procPerceptivos(request, lines, filename):
+def procPerceptivos(request, lines, fileName):
     """Perceptivos """
     dic = {}
     lineas = lines.split('\n')
+    print(lineas)
+    print(lineas[0],"soy lineas 0")
     d = {}
     d = ast.literal_eval(lineas[1])
     #save in db
-    fileName.puntaje = d["Puntaje"]
+    fileName.puntaje = d["puntaje"]
     fileName.dialogos = d["Dialogos"]
     fileName.eventos = d["Eventos"]
     fileName.puntuacion = d["Puntuacion"]
@@ -1238,6 +1240,7 @@ def procPerceptivos(request, lines, filename):
     fileName.objetivo = d["Objetivo"]
     fileName.mecanica = d["Mecanica"]
     fileName.save()
+    return dic
 
 def procMastery(request,lines, fileName):
     """Mastery"""
