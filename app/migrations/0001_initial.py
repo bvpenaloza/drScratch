@@ -158,6 +158,7 @@ class Migration(migrations.Migration):
             },
             bases=(models.Model,),
         ),
+        
         migrations.CreateModel(
             name='Organization',
             fields=[
@@ -228,6 +229,13 @@ class Migration(migrations.Migration):
                 ('duplicateScript', models.IntegerField(default=0)),
                 ('spriteNaming', models.IntegerField(default=0)),
                 ('initialization', models.IntegerField(default=0)),
+                ('puntaje', models.IntegerField(default=0)),
+                ('dialogos', models.IntegerField(default=0)),
+                ('eventos', models.IntegerField(default=0)),
+                ('puntuacion', models.IntegerField(default=0)),
+                ('acciones', models.IntegerField(default=0)),
+                ('objetivo', models.IntegerField(default=0)),
+                ('mecanica', models.IntegerField(default=0)),
             ],
             options={
             },
