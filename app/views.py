@@ -168,7 +168,7 @@ def selector(request):
                 sh.share('bvpenaloza.11@gmail.com', perm_type='user', role='writer')
                 sh.share(mail, perm_type='user', role='writer')
                 sheet = client.open(nameFile).sheet1
-                listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript', 'Puntaje','Dialogos','Eventos','puntuacion','acciones','objetivo','mecanica' ]
+                listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript', 'puntaje','dialogos','eventos','puntuacion','acciones','objetivo','mecanica' ]
                 updateSheet(listValues, 1, sheet)
                 d = ''
                 row = 2  
