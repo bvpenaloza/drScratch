@@ -1145,9 +1145,11 @@ def analyzeProject(request,file_name, fileName):
             file_name = list_file[0] + '\(' + list_file[1]
             list_file = file_name.split(')')
             file_name = list_file[0] + '\)' + list_file[1]
-    
+
         #Request to hairball
-        metricPerceptivos = "hairball -d "+"C:\Users\johan\Desktop\drScratchPrg\plugins"+" -p perceptivos.Perceptivos " + file_name
+        #nota arreglar esta parte por que si no se instala los plugins por medio de setup hairball cambiar la direccion de los slash para windows
+        #la direccion de /plugins/ son para servidores linux cambiar para que funcione
+        metricPerceptivos = "hairball -d "+os.path.dirname(os.path.dirname(__file__))+ "/plugins/"+" -p perceptivos.Perceptivos " + file_name
         metricMastery = "hairball -p mastery.Mastery " + file_name
         metricDuplicateScript = "hairball -p \
                                 duplicate.DuplicateScripts " + file_name
