@@ -4,18 +4,18 @@
        <!-- <link rel="stylesheet" href="estilo.css"> -->
         {% load static %}
 
-        <link rel="stylesheet" href="{% static 'encuestas/estilo.css' %}">
-        <link rel="stylesheet" href="{% static 'encuestas/iconos' %}">
-        <link rel="stylesheet" href="{% static 'encuestas/imagenes' %}">
+        <link rel="stylesheet" href="{% static 'app/css/estilo.css' %}">
+        <link rel="stylesheet" href="{% static 'app/iconos' %}">
+        <link rel="stylesheet" href="{% static 'app/imagenes' %}">
     </head>
 
 <body>
     <div class="header">
-        <a href="#home"><img src="/static/encuestas/imagenes/logo_main.png" id="logo"></a>
+        <a href="#home"><img src="/static/app/imagenes/logo_main.png" id="logo"></a>
          <div class="header-right">
-             <a href="#twitter"><img src="/static/encuestas/iconos/twitter.png" id="twitter"></a>
-             <a href="#mail"><img src="/static/encuestas/iconos/mail.png" id="mail"></a>
-             <a href="#preguntas"><img src="/static/encuestas/iconos/twopoints.png" id="preguntas"></a>
+             <a href="#twitter"><img src="/static/app/iconos/twitter.png" id="twitter"></a>
+             <a href="#mail"><img src="/static/app/iconos/mail.png" id="mail"></a>
+             <a href="#preguntas"><img src="/static/app/iconos/twopoints.png" id="preguntas"></a>
          </div>
     </div> 
 
@@ -23,67 +23,55 @@
         <table>
             <caption>CRITERIOS PERCEPTIVOS</caption>
             <tr>
-                <th style="text-align:left">Criterio </th>
-                <th>Nivel</th>
-                <th style="text-align:right">Observaciones</th>
-            </tr>
-            <tr>
-                <td class="nombrecriterio">Mecanica explicativa
+                <th style="text-align:left">Nombre del Juego</th>
+                <th class="nombrecriterio">Mecanica explicativa
                     <span class="tooltip">
                        ¿Al inicio existen bloques de texto explicativo del videojuego?
-                    </span></td>
-                <td><span class="dot1"></span></td>
-                <td class="comenta">le faltan textos explicativos a tu videojuego</td>
+                    </span></th>
+                    <!--
+                <th class="nombrecriterio">Cantidad de personajes
+                    <span class="tooltip">
+                        ¿El videojuego incluye varios personajes?
+                    </span></th>-->
+                <th class="nombrecriterio">Dialogos de personajes
+                    <span class="tooltip">
+                        ¿Todos los personajes participan de algun dialogo?
+                    </span></th>
+                <th class="nombrecriterio">Eventos del videojuego
+                    <span class="tooltip">
+                        ¿El videojuego utiliza eventos?
+                    </span></th>
+                <th class="nombrecriterio">Anotacion de puntos
+                    <span class="tooltip">
+                        ¿Utiliza la accion "anotar puntos"?
+                    </span></th>
+                <th class="nombrecriterio">Control de personajes
+                    <span class="tooltip">
+                        ¿Contiene acciones como "mover actor", "detener actor", "saltar"?
+                    </span></th>
+                <th class="nombrecriterio">Objetivo definido
+                    <span class="tooltip">
+                        ¿El videojuego persigue un objetivo claro?
+                    </span></th>
+                <th style="text-align:right">Puntaje y Observaciones</th>
             </tr>
             <tr>
-                <td class="nombrecriterio">Cantidad de personajes
-                    <span class="tooltip">
-                       ¿El videojuego incluye varios personajes?
-                    </span></td>
-                <td><span class="dot2"></span></td>
-                <td class="comenta">algunos personajes pero quizas podrias agregar mas...</td>
-            </tr>
-            <tr>
-                <td class="nombrecriterio">Dialogos de personajes
-                    <span class="tooltip">
-                       ¿Todos los personajes participan de algun dialogo?
-                    </span></td>
-                <td><span class="dot3"></span></td>
-                <td class="comenta">todos los personajes tuvieron varios dialogos, excelente narrativa!</td>
-            </tr>
-            <tr>
-                <td class="nombrecriterio">Evento en el videojuego
-                    <span class="tooltip">
-                       ¿El videojuego utiliza eventos?
-                    </span></td>
-                <td><span class="dot4"></span></td>
-                <td class="comenta">se detectaron pocos eventos para...</td>
-            </tr>
-            <tr>
-                <td class="nombrecriterio">Anotacion de puntos
-                    <span class="tooltip">
-                       ¿Utiliza la accion "anotar puntos"?
-                    </span></td>
-                <td><span class="dot5"></span></td>
-                <td class="comenta">esto fallo en...</td>
-            </tr>
-            <tr>
-                <td class="nombrecriterio">Control de personajes
-                    <span class="tooltip">
-                       ¿Contiene acciones como "mover actor", "definir actor", "detener actor"?
-                    </span></td>
-                <td><span class="dot6"></span></td>
-                <td class="comenta">el control de los personajes estuvo bien! pero se puede mejorar... </td>
-            </tr>
-            <tr>
-                <td class="nombrecriterio">Objetivo definido
-                    <span class="tooltip">
-                       ¿El videojuego persigue un objetivo claro?
-                    </span></td>
-                <td><span class="dot7"></span></td>
-                <td class="comenta">el objetivo final se comprendio perfecto, excelente!</td>
-            </tr>
+                <td><span></span></td>
 
+                <td><span class="dot1"></span></td>
+                
+                <td><span class="dot2"></span></td>
+                              
+                <td><span class="dot3"></span></td>
+
+                <td><span class="dot1"></span></td>
+
+                <td><span class="dot2"></span></td>
+
+                <td><span class="dot3"></span></td>
+                
+                <td><span></span></td>
+            </tr>
         </table>
 
     </div>
@@ -112,14 +100,13 @@
 
         </table>
     </div>
-
 -->
+  <div class="ambos">
 
-    <div>
-            <img src="/static/encuestas/imagenes/monito2.png" id="monito">
     <div class="puntuacion">
         <table>
             <tr>
+                <td><span>  <img src="/static/app/imagenes/monito2.png" id="monito"></span> </td>
                 <td id="tips"><p>esto es tips genericos</p>
                     en este apartado podras encontrar recomendaciones
                     para la creacion de tus juegos de una forma mas optima
@@ -128,18 +115,20 @@
             
         </table>
     </div>
-    </div>
+    
 
     <div class="compartir">
         <table>
                 <caption>COMPARTIR CON TUS AMIGOS</caption>
             <tr>
-                <th><a href="#facebook"><img src="/static/encuestas/iconos/facebook.png" id="facebook"></a></th>
-                <th><a href="#instagram"><img src="/static/encuestas/iconos/instagram.png" id="instagram"></a></th>
-                <th><a href="#linkedin"><img src="/static/encuestas/iconos/linkedin.png" id="linkedin"></a></th>
+                <th><a href="#facebook"><img src="/static/app/iconos/facebook.png" id="facebook"></a></th>
+                <th><a href="#instagram"><img src="/static/app/iconos/instagram.png" id="instagram"></a></th>
+                <th><a href="#linkedin"><img src="/static/app/iconos/linkedin.png" id="linkedin"></a></th>
             </tr>
         </table>
     </div>
+
+  </div>
 
     <footer>
         <div class="footer">
