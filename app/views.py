@@ -97,6 +97,13 @@ def error500(request):
 #-------------------------------------------------------------------------
 
 
+#_______________________ dashpy criterios perceptivos ___________________#
+
+def dashpy(request):
+    diccionario = {}
+    return render_to_response("dashpy/perceptivos.html", {'diccionary':diccionario} , context_instance = RC(request))
+
+
 #_______________________ TO UNREGISTERED USER ___________________________#
 
 def selector(request):
@@ -164,8 +171,8 @@ def selector(request):
                 x = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 nameFile = 'PRG '+ x 
                 sh = client.create(nameFile)
-                sh.share('valeria.leon@progracademy.org', perm_type='user', role='writer')
-                sh.share('bvpenaloza.11@gmail.com', perm_type='user', role='writer')
+                #sh.share('valeria.leon@progracademy.org', perm_type='user', role='writer')
+                #sh.share('bvpenaloza.11@gmail.com', perm_type='user', role='writer')
                 sh.share(mail, perm_type='user', role='writer')
                 sheet = client.open(nameFile).sheet1
                 listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript', 'puntaje','dialogos','eventos','puntuacion','acciones','objetivo','mecanica' ]
