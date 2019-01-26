@@ -13,6 +13,7 @@ urlpatterns = (
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),
     url(r'^selector', 'app.views.selector',),
+    url(r'^dashpy','app.views.dashpy',),
     #url(r'^login', 'app.views.loginUser',),
     #url(r'^logout', 'app.views.logoutUser',),
     url(r'^users$', 'app.views.signUpUser',),
