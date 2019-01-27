@@ -134,20 +134,9 @@
         <div>
             <table>
                 <tr>hola hellomoto</tr>
-                    {% for obj in diccionary %}
+                    {% for obj in dic %}
                     <tr>
-                        <td >{{ obj.filename }}</td>
-                        <td >{{ obj.score }}</td>
-                        <td >{{ obj.abstraction }}</td>
-                        <td >{{ obj.parallelization }}</td>
-                        <td >{{ obj.logic }}</td>
-                        <td >{{ obj.synchronization }}</td>
-                        <td >{{ obj.flowControl }}</td>
-                        <td >{{ obj.userInteractivity }}</td>
-                        <td >{{ obj.dataRepresentation }}</td>
-                        <td >{{ obj.spriteNaming }}</td>
-                        <td >{{ obj.initialization }}</td>
-                        <td>hola</td>
+                        {{obj.mecanica}}
                     </tr>
                     {% endfor %}
                
@@ -155,7 +144,9 @@
         </div>        
         <div class="footer">
            <p>@2018 Dr Scratch esta implementado con <span>Hairball</span></p>
-           <p>{{criterio1color}}</p>
+           {% for obj in dic %}
+           <p>soy mecanica {{obj.mecanica}}</p>
+           {% endfor %}
         </div>    
     </footer>
 

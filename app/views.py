@@ -52,7 +52,7 @@ pDuplicateScript = "hairball -p duplicate.DuplicateScripts "
 pSpriteNaming = "hairball -p convention.SpriteNaming "
 pDeadCode = "hairball -p blocks.DeadCode "
 pInitialization = "hairball -p initialization.AttributeInitialization "
-
+diccionarioglobal = []
 
 #_____________________________ MAIN ______________________________________#
 
@@ -99,14 +99,24 @@ def error500(request):
 
 #_______________________ dashpy criterios perceptivos ___________________#
 
-def dashpy(request):
-    diccionario = {}
-    return render_to_response("dashpy/perceptivos.html", {'diccionary':diccionario} , context_instance = RC(request))
+def dashpy(request): 
+    global diccionarioglobal
+    diccionary = diccionarioglobal
+    print (diccionarioglobal)
+    print (diccionary)
+    print ("fuera del for")
+    for obj in diccionary:
+        print(obj.dataRepresentation)
+        print(obj.mecanica)
+        print(obj)
+        print("dentro del for")
+    return render_to_response("dashpy/perceptivos.html", {'dic':diccionary} , context_instance = RC(request))
 
 
 #_______________________ TO UNREGISTERED USER ___________________________#
 
 def selector(request):
+    global diccionarioglobal
     if request.method == 'POST':
         error = False
         id_error = False
@@ -192,8 +202,9 @@ def selector(request):
                     listValues = [f.id, f.filename, f.method, f.time, f.language, level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript, f.puntaje, f.dialogos, f.eventos, f.puntuacion, f.acciones, f.objetivo, f.mecanica]
                     updateSheet(listValues, row, sheet)
                     row += 1
+                diccionarioglobal = diccionary    
                 return render_to_response("upload/dashboard-unregistered-folder.html", {'diccionary': diccionary} )
-                    
+            diccionarioglobal = diccionary       
             return HttpResponseRedirect('/') 
     else:
         return HttpResponseRedirect('/')
