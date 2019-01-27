@@ -181,7 +181,7 @@ def selector(request):
                 x = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 nameFile = 'PRG '+ x 
                 sh = client.create(nameFile)
-                #sh.share('valeria.leon@progracademy.org', perm_type='user', role='writer')
+                sh.share('valeria.leon@progracademy.org', perm_type='user', role='writer')
                 #sh.share('bvpenaloza.11@gmail.com', perm_type='user', role='writer')
                 sh.share(mail, perm_type='user', role='writer')
                 sheet = client.open(nameFile).sheet1
