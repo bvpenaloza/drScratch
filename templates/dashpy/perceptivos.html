@@ -1,5 +1,5 @@
 <html>
-    
+<div id="global">    
     <head>
        <!-- <link rel="stylesheet" href="estilo.css"> -->
         {% load static %}
@@ -13,9 +13,9 @@
     <div class="header">
         <a href="/"><img src="/static/app/imagenes/logo_main.png" id="logo"></a>
          <div class="header-right">
-             <a href="#twitter"><img src="/static/app/iconos/twitter.png" href="https://twitter.com/DrScratchTool" id="twitter"></a>
-             <a href="#mail"><img src="/static/app/iconos/mail.png" href="mailto:drscratch@programamos.es" id="mail"></a>
-             <a href="#preguntas"><img src="/static/app/iconos/twopoints.png" id="preguntas"></a>
+             <a href="https://twitter.com/DrScratchTool"><img src="/static/app/iconos/twitter.png" href="https://twitter.com/DrScratchTool" id="twitter"></a>
+             <a href="mailto:drscratch@programamos.es"><img src="/static/app/iconos/mail.png" href="mailto:drscratch@programamos.es" id="mail"></a>
+             <!--<a href="#preguntas"><img src="/static/app/iconos/twopoints.png" id="preguntas"></a>-->
          </div>
     </div> 
 
@@ -55,99 +55,72 @@
                     </span></th>
                 <th style="text-align:right">Puntaje y Observaciones</th>
             </tr>
-            {% for obj in dic %}
-            <tr>
-                
+                 {% for obj in dic %}
+                 <tr>               
                 <td><span>{{ obj.filename }}</span></td>
                 {% if obj.mecanica == 3 %}
-                <td><span class="dot1"></span></td>
+                <td><span class="dot3"></span></td>
                 {% elif obj.mecanica == 2 %}
                 <td><span class="dot2"></span></td>
                 {% elif obj.mecanica == 1 %}              
-                <td><span class="dot3"></span></td>
+                <td><span class="dot1"></span></td>
                 {% else %}
-                <td><span class="dot4"></span></td>
+                <td><span class="dot0"></span></td>
                 {% endif %}
                 {% if obj.dialogos == 3 %}
-                <td><span class="dot1"></span></td>
+                <td><span class="dot3"></span></td>
                 {% elif obj.dialogos == 2 %}
                 <td><span class="dot2"></span></td>
                 {% elif obj.dialogos == 1 %}              
-                <td><span class="dot3"></span></td>
+                <td><span class="dot1"></span></td>
                 {% else %}
-                <td><span class="dot4"></span></td>
+                <td><span class="dot0"></span></td>
                 {% endif %}
                 {% if obj.eventos == 3 %}
-                <td><span class="dot1"></span></td>
+                <td><span class="dot3"></span></td>
                 {% elif obj.eventos == 2 %}
                 <td><span class="dot2"></span></td>
                 {% elif obj.eventos == 1 %}              
-                <td><span class="dot3"></span></td>
+                <td><span class="dot1"></span></td>
                 {% else %}
-                <td><span class="dot4"></span></td>
+                <td><span class="dot0"></span></td>
                 {% endif %}
                 {% if obj.puntuacion == 3 %}
-                <td><span class="dot1"></span></td>
+                <td><span class="dot3"></span></td>
                 {% elif obj.puntuacion == 2 %}
                 <td><span class="dot2"></span></td>
                 {% elif obj.puntuacion == 1 %}              
-                <td><span class="dot3"></span></td>
+                <td><span class="dot1"></span></td>
                 {% else %}
-                <td><span class="dot4"></span></td>
+                <td><span class="dot0"></span></td>
                 {% endif %}
                 {% if obj.acciones == 3 %}
-                <td><span class="dot1"></span></td>
+                <td><span class="dot3"></span></td>
                 {% elif obj.acciones == 2 %}
                 <td><span class="dot2"></span></td>
                 {% elif obj.acciones == 1 %}              
-                <td><span class="dot3"></span></td>
+                <td><span class="dot1"></span></td>
                 {% else %}
-                <td><span class="dot4"></span></td>
+                <td><span class="dot0"></span></td>
                 {% endif %}
                 {% if obj.objetivo == 3 %}
-                <td><span class="dot1"></span></td>
+                <td><span class="dot3"></span></td>
                 {% elif obj.objetivo == 2 %}
                 <td><span class="dot2"></span></td>
                 {% elif obj.objetivo == 1 %}              
-                <td><span class="dot3"></span></td>
+                <td><span class="dot1"></span></td>
                 {% else %}
-                <td><span class="dot4"></span></td>
+                <td><span class="dot0"></span></td>
                 {% endif %}
-
-                <td><span>Obtuviste {{ obj.puntaje }} ptos</span></td>
-               
-            </tr>
-            {% endfor %}
+                <td><span>Obtuviste {{ obj.puntaje }} ptos</span></td>               
+                </tr>
+                {% endfor %}
         </table>
 
     </div>
 
-<!-- esta parte no toca colocar, pero revisar
 
-    <div class="practicas">
-        <table>
-            <caption>MEJORES PRACTICAS</caption>
-            <tr>
-                <th>icono de duplicado</th>
-                <td>informacion duplicados</td>
-            </tr>
-            <tr>
-                <th>icono de inadecuados</th>
-                <td>informacion de inadecuados</td>
-            </tr>
-            <tr>
-                <th>icono de prohibido</th>
-                <td>informacion de codigo</td>
-            </tr>
-            <tr>
-                <th>icono de atributos</th>
-                <td>informacion de atributos</td>
-            </tr>
-
-        </table>
-    </div>
--->
-  <div class="ambos">
+    <div class="ambos">
 
     <div class="puntuacion">
         <table>
@@ -167,23 +140,22 @@
         <table>
                 <caption>COMPARTIR CON TUS AMIGOS</caption>
             <tr>
-                <th><a href="#facebook"><img src="/static/app/iconos/facebook.png" id="facebook"></a></th>
-                <th><a href="#instagram"><img src="/static/app/iconos/instagram.png" id="instagram"></a></th>
-                <th><a href="#linkedin"><img src="/static/app/iconos/linkedin.png" id="linkedin"></a></th>
+                <th><a href="https://facebook.com"><img src="/static/app/iconos/facebook.png" id="facebook"></a></th>
+                <th><a href="https://instagram.com"><img src="/static/app/iconos/instagram.png" id="instagram"></a></th>
+                <th><a href="https://linkedin.com"><img src="/static/app/iconos/linkedin.png" id="linkedin"></a></th>
             </tr>
         </table>
-    </div>
+    </div> 
 
-  </div>
+   </div>
 
-    <footer>
-        <div class="footer">
-           <p>@2018 Dr Scratch esta implementado con <span>Hairball</span></p>
-        </div>    
-    </footer>
+   <div>
+       <table>
+           <caption><p>©2014 Dr. Scratch is powered by<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a></p>
+     </caption>
+       </table>
+   </div>
 
+</body>
 
-
-    </body>
-
-  </html>
+</html>
