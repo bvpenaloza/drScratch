@@ -55,23 +55,69 @@
                     </span></th>
                 <th style="text-align:right">Puntaje y Observaciones</th>
             </tr>
+            {% for obj in dic %}
             <tr>
-                <td><span></span></td>
-
-                <td><span class="dot1"></span></td>
                 
-                <td><span class="dot2"></span></td>
-                              
-                <td><span class="dot3"></span></td>
-
+                <td><span>{{ obj.filename }}</span></td>
+                {% if obj.mecanica == 3 %}
                 <td><span class="dot1"></span></td>
-
+                {% elif obj.mecanica == 2 %}
                 <td><span class="dot2"></span></td>
-
+                {% elif obj.mecanica == 1 %}              
                 <td><span class="dot3"></span></td>
-                
-                <td><span></span></td>
+                {% else %}
+                <td><span class="dot4"></span></td>
+                {% endif %}
+                {% if obj.dialogos == 3 %}
+                <td><span class="dot1"></span></td>
+                {% elif obj.dialogos == 2 %}
+                <td><span class="dot2"></span></td>
+                {% elif obj.dialogos == 1 %}              
+                <td><span class="dot3"></span></td>
+                {% else %}
+                <td><span class="dot4"></span></td>
+                {% endif %}
+                {% if obj.eventos == 3 %}
+                <td><span class="dot1"></span></td>
+                {% elif obj.eventos == 2 %}
+                <td><span class="dot2"></span></td>
+                {% elif obj.eventos == 1 %}              
+                <td><span class="dot3"></span></td>
+                {% else %}
+                <td><span class="dot4"></span></td>
+                {% endif %}
+                {% if obj.puntuacion == 3 %}
+                <td><span class="dot1"></span></td>
+                {% elif obj.puntuacion == 2 %}
+                <td><span class="dot2"></span></td>
+                {% elif obj.puntuacion == 1 %}              
+                <td><span class="dot3"></span></td>
+                {% else %}
+                <td><span class="dot4"></span></td>
+                {% endif %}
+                {% if obj.acciones == 3 %}
+                <td><span class="dot1"></span></td>
+                {% elif obj.acciones == 2 %}
+                <td><span class="dot2"></span></td>
+                {% elif obj.acciones == 1 %}              
+                <td><span class="dot3"></span></td>
+                {% else %}
+                <td><span class="dot4"></span></td>
+                {% endif %}
+                {% if obj.objetivo == 3 %}
+                <td><span class="dot1"></span></td>
+                {% elif obj.objetivo == 2 %}
+                <td><span class="dot2"></span></td>
+                {% elif obj.objetivo == 1 %}              
+                <td><span class="dot3"></span></td>
+                {% else %}
+                <td><span class="dot4"></span></td>
+                {% endif %}
+
+                <td><span>Obtuviste {{ obj.puntaje }} ptos</span></td>
+               
             </tr>
+            {% endfor %}
         </table>
 
     </div>
@@ -131,22 +177,8 @@
   </div>
 
     <footer>
-        <div>
-            <table>
-                <tr>hola hellomoto</tr>
-                    {% for obj in dic %}
-                    <tr>
-                        {{obj.mecanica}}
-                    </tr>
-                    {% endfor %}
-               
-                </table>
-        </div>        
         <div class="footer">
            <p>@2018 Dr Scratch esta implementado con <span>Hairball</span></p>
-           {% for obj in dic %}
-           <p>soy mecanica {{obj.mecanica}}</p>
-           {% endfor %}
         </div>    
     </footer>
 
