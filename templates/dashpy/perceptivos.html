@@ -11,10 +11,10 @@
 
 <body>
     <div class="header">
-        <a href="#home"><img src="/static/app/imagenes/logo_main.png" id="logo"></a>
+        <a href="/"><img src="/static/app/imagenes/logo_main.png" id="logo"></a>
          <div class="header-right">
-             <a href="#twitter"><img src="/static/app/iconos/twitter.png" id="twitter"></a>
-             <a href="#mail"><img src="/static/app/iconos/mail.png" id="mail"></a>
+             <a href="#twitter"><img src="/static/app/iconos/twitter.png" href="https://twitter.com/DrScratchTool" id="twitter"></a>
+             <a href="#mail"><img src="/static/app/iconos/mail.png" href="mailto:drscratch@programamos.es" id="mail"></a>
              <a href="#preguntas"><img src="/static/app/iconos/twopoints.png" id="preguntas"></a>
          </div>
     </div> 
@@ -131,6 +131,28 @@
   </div>
 
     <footer>
+        <div>
+            <table>
+                <tr>hola hellomoto</tr>
+                    {% for obj in diccionary %}
+                    <tr>
+                        <td >{{ obj.filename }}</td>
+                        <td >{{ obj.score }}</td>
+                        <td >{{ obj.abstraction }}</td>
+                        <td >{{ obj.parallelization }}</td>
+                        <td >{{ obj.logic }}</td>
+                        <td >{{ obj.synchronization }}</td>
+                        <td >{{ obj.flowControl }}</td>
+                        <td >{{ obj.userInteractivity }}</td>
+                        <td >{{ obj.dataRepresentation }}</td>
+                        <td >{{ obj.spriteNaming }}</td>
+                        <td >{{ obj.initialization }}</td>
+                        <td>hola</td>
+                    </tr>
+                    {% endfor %}
+               
+                </table>
+        </div>        
         <div class="footer">
            <p>@2018 Dr Scratch esta implementado con <span>Hairball</span></p>
            <p>{{criterio1color}}</p>
