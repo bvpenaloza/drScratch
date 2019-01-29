@@ -169,13 +169,27 @@ class Perceptivos(HairballPlugin):
         actions = self.getActions(spritesHidden, scratch)
         spritesShown = self.getShownSprites(spritesHidden,actions ,scratch)
         #ToDo: Check if there are variables and lists and if so check if they are shown after actions
-        if (backdropWhenGreenFlag > 0 
-            and len (spritesHidden) > 0
-            and spritesShown >0
+             if (backdropWhenGreenFlag > 0 
+            and len (spritesHidden) >= 3
+            and spritesShown >= 3
             and len(actions) > 0):
             color = "green"
             comentario = "Excelente"
             mecanica = 3
+        elif (backdropWhenGreenFlag > 0 
+            and len (spritesHidden) == 2
+            and spritesShown == 2
+            and len(actions) > 0):
+            color = "light green"
+            comentario = "muy bien"
+            mecanica = 2 
+        elif (backdropWhenGreenFlag > 0 
+            and len (spritesHidden) == 1
+            and spritesShown == 1
+            and len(actions) > 0):
+            color = "yellow"
+            comentario = "bien"
+            mecanica = 1
         else:
             color = "white"
             comentario = "No Encontrado o No aplica"
