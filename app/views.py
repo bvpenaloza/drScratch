@@ -182,11 +182,11 @@ def selector(request):
                 x = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 nameFile = 'PRG '+ x 
                 sh = client.create(nameFile)
-                sh.share('valeria.leon@progracademy.org', perm_type='user', role='writer')
+                #sh.share('valeria.leon@progracademy.org', perm_type='user', role='writer')
                 #sh.share('bvpenaloza.11@gmail.com', perm_type='user', role='writer')
                 sh.share(mail, perm_type='user', role='writer')
                 sheet = client.open(nameFile).sheet1
-                listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript', 'puntaje','dialogos','eventos','puntuacion','acciones','objetivo','mecanica' ]
+                listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript', 'puntaje','dialogos','eventos','puntuacion','acciones','objetivo','mecanica','anidado','colores','geometricas','artista','points' ]
                 updateSheet(listValues, 1, sheet)
                 d = ''
                 row = 2  
@@ -200,7 +200,7 @@ def selector(request):
                         level='master'
                     elif (int(f.score) > 7):
                         level='developing'
-                    listValues = [f.id, f.filename, f.method, f.time, f.language, level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript, f.puntaje, f.dialogos, f.eventos, f.puntuacion, f.acciones, f.objetivo, f.mecanica]
+                    listValues = [f.id, f.filename, f.method, f.time, f.language, level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript, f.puntaje, f.dialogos, f.eventos, f.puntuacion, f.acciones, f.objetivo, f.mecanica, f.anidado, f.colores, f.geometricas, f.artista, f.points]
                     updateSheet(listValues, row, sheet)
                     row += 1
                 diccionarioglobal = diccionary    
@@ -275,7 +275,9 @@ def uploadUnregistered(request):
                         spriteNaming = 0 ,initialization = 0,
                         deadCode = 0, duplicateScript = 0, eventos = 0,
                         puntuacion = 0, puntaje = 0, mecanica = 0,
-                        dialogos = 0, acciones = 0, objetivo = 0)
+                        dialogos = 0, acciones = 0, objetivo = 0
+                        anidado = 0, colores = 0, geometricas = 0,
+                        artista = 0, points = 0)
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
         fileSaved = dir_zips + str(fileName.id) + ".sb2"
@@ -356,7 +358,9 @@ def uploadUnregisteredSecond(request,file):
                         spriteNaming = 0 ,initialization = 0,
                         deadCode = 0, duplicateScript = 0, eventos = 0,
                         puntuacion = 0, puntaje = 0, mecanica = 0,
-                        dialogos = 0, acciones = 0, objetivo = 0)
+                        dialogos = 0, acciones = 0, objetivo = 0
+                        anidado = 0, colores = 0, geometricas = 0,
+                        artista = 0, points = 0)
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
         fileSaved = dir_zips + str(fileName.id) + ".sb2"
@@ -481,7 +485,9 @@ def sendRequestgetSB2(idProject, organization, method):
                      spriteNaming = 0 ,initialization = 0,
                      deadCode = 0, duplicateScript = 0, eventos = 0,
                      puntuacion = 0, puntaje = 0, mecanica = 0,
-                     dialogos = 0, acciones = 0, objetivo = 0)
+                     dialogos = 0, acciones = 0, objetivo = 0
+                     anidado = 0, colores = 0, geometricas = 0,
+                     artista = 0, points = 0)
     fileName.save()
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
@@ -1248,18 +1254,31 @@ def procPerceptivos(request, lines, fileName):
     """Perceptivos """
     dic = {}
     lineas = lines.split('\n')
-    print(lineas)
-    print(lineas[0],"soy lineas 0")
     d = {}
     d = ast.literal_eval(lineas[1])
     #save in db
-    fileName.puntaje = d["puntaje"]
+    fileName.puntaje = d["Puntaje"]
     fileName.dialogos = d["Dialogos"]
     fileName.eventos = d["Eventos"]
     fileName.puntuacion = d["Puntuacion"]
     fileName.acciones = d["Acciones"]
     fileName.objetivo = d["Objetivo"]
     fileName.mecanica = d["Mecanica"]
+    fileName.save()
+    return dic
+
+def procFascinantes(request, lines, fileName):
+    """Fascinantes """
+    dic = {}
+    lineas = lines.split('\n')
+    d = {}
+    d = ast.literal_eval(lineas[1])
+    #save in db
+    fileName.anidado = d["Anidado"]
+    fileName.colores = d["Colores"]
+    fileName.geometricas = d["Geometricas"]
+    fileName.artista = d["Artista"]
+    fileName.points = d["Points"]
     fileName.save()
     return dic
 
