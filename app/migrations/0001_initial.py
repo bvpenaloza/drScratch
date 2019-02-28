@@ -109,6 +109,20 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
+            name='Fascinantes',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('anidado', models.IntegerField()),
+                ('colores', models.IntegerField()),
+                ('geometricas', models.IntegerField()),
+                ('artista', models.IntegerField()),
+                ('points', models.IntegerField()),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='File',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
@@ -132,10 +146,10 @@ class Migration(migrations.Migration):
                 ('puntaje', models.IntegerField()),
                 ('dialogos', models.IntegerField()),
                 ('eventos', models.IntegerField()),
-                ('acciones', models.IntegerField()),
                 ('puntuacion', models.IntegerField()),
-                ('objetivo', models.IntegerField()),
+                ('acciones', models.IntegerField()),
                 ('mecanica', models.IntegerField()),
+                ('objetivo', models.IntegerField()),
                 ('anidado', models.IntegerField()),
                 ('colores', models.IntegerField()),
                 ('geometricas', models.IntegerField()),
@@ -163,7 +177,6 @@ class Migration(migrations.Migration):
             },
             bases=(models.Model,),
         ),
-        
         migrations.CreateModel(
             name='Organization',
             fields=[
@@ -182,6 +195,22 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('hashkey', models.TextField()),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Perceptivos',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('puntaje', models.IntegerField()),
+                ('dialogos', models.IntegerField()),
+                ('eventos', models.IntegerField()),
+                ('puntuacion', models.IntegerField()),
+                ('acciones', models.IntegerField()),
+                ('mecanica', models.IntegerField()),
+                ('objetivo', models.IntegerField()),
             ],
             options={
             },
@@ -239,8 +268,13 @@ class Migration(migrations.Migration):
                 ('eventos', models.IntegerField(default=0)),
                 ('puntuacion', models.IntegerField(default=0)),
                 ('acciones', models.IntegerField(default=0)),
-                ('objetivo', models.IntegerField(default=0)),
                 ('mecanica', models.IntegerField(default=0)),
+                ('objetivo', models.IntegerField(default=0)),
+                ('anidado', models.IntegerField(default=0)),
+                ('colores', models.IntegerField(default=0)),
+                ('geometricas', models.IntegerField(default=0)),
+                ('artista', models.IntegerField(default=0)),
+                ('points', models.IntegerField(default=0)),
             ],
             options={
             },
@@ -271,7 +305,19 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.AddField(
+            model_name='perceptivos',
+            name='myproject',
+            field=models.ForeignKey(to='app.Project'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
             model_name='mastery',
+            name='myproject',
+            field=models.ForeignKey(to='app.Project'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='fascinantes',
             name='myproject',
             field=models.ForeignKey(to='app.Project'),
             preserve_default=True,

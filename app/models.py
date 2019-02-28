@@ -146,6 +146,11 @@ class Stats(models.Model):
     acciones = models.IntegerField(default=int(0))
     mecanica = models.IntegerField(default=int(0))
     objetivo = models.IntegerField(default=int(0))
+    anidado = models.IntegerField(default=int(0))
+    colores = models.IntegerField(default=int(0))
+    geometricas = models.IntegerField(default=int(0))
+    artista = models.IntegerField(default=int(0))
+    points = models.IntegerField(default=int(0))
 
 class Perceptivos(models.Model):
     myproject = models.ForeignKey(Project)

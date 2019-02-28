@@ -88,16 +88,16 @@ class Fascinantes(HairballPlugin):
             points = reduce(lambda a, b: a+b, self.__final_result.values())
             #Evalutes the range points of Scratch project
             self.__final_result['points'] = points
-            self.__final_result['Error'] = 'None'
+          #  self.__final_result['Error'] = 'None'
         else:
             self.__final_result['points'] = 0
-            self.__final_result['Error'] = 'File does not exist or contain empty scripts'
+         #   self.__final_result['Error'] = 'File does not exist or contain empty scripts'
             self.__final_result['colores'] = 0 
             self.__final_result['artista'] = 0
             self.__final_result['anidado'] = 0
             self.__final_result['geometricas'] = 0
             
-        self.__final_result['Max points'] = 12
+        #self.__final_result['Max points'] = 12
         
         #Print final result
         print self.__final_result

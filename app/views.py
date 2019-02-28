@@ -186,7 +186,7 @@ def selector(request):
                 #sh.share('bvpenaloza.11@gmail.com', perm_type='user', role='writer')
                 sh.share(mail, perm_type='user', role='writer')
                 sheet = client.open(nameFile).sheet1
-                listValues = ['id', 'filename', 'method', 'time', 'language', 'level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript', 'puntaje','dialogos','eventos','puntuacion','acciones','objetivo','mecanica','anidado','colores','geometricas','artista','points' ]
+                listValues = [ 'filename','level',  'score', 'abstraction', 'parallelization', 'logic', 'synchronization', 'flowControl', 'userInteractivity', 'dataRepresentation' , 'spriteNaming' , 'initialization', 'deadCode', 'duplicateScript', 'puntaje','dialogos','eventos','puntuacion','acciones','objetivo','mecanica','anidado','colores','geometricas','artista','points' ]
                 updateSheet(listValues, 1, sheet)
                 d = ''
                 row = 2  
@@ -200,12 +200,12 @@ def selector(request):
                         level='master'
                     elif (int(f.score) > 7):
                         level='developing'
-                    listValues = [f.id, f.filename, f.method, f.time, f.language, level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript, f.puntaje, f.dialogos, f.eventos, f.puntuacion, f.acciones, f.objetivo, f.mecanica, f.anidado, f.colores, f.geometricas, f.artista, f.points]
+                    listValues = [ f.filename, f.level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript, f.puntaje, f.dialogos, f.eventos, f.puntuacion, f.acciones, f.objetivo, f.mecanica, f.anidado, f.colores, f.geometricas, f.artista, f.points]
                     updateSheet(listValues, row, sheet)
                     row += 1
                 diccionarioglobal = diccionary    
                 return render_to_response("upload/dashboard-unregistered-folder.html", {'diccionary': diccionary} )
-            diccionarioglobal = diccionary       
+                diccionarioglobal = diccionary       
             return HttpResponseRedirect('/') 
     else:
         return HttpResponseRedirect('/')
