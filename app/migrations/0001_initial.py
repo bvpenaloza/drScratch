@@ -136,6 +136,11 @@ class Migration(migrations.Migration):
                 ('puntuacion', models.IntegerField()),
                 ('objetivo', models.IntegerField()),
                 ('mecanica', models.IntegerField()),
+                ('anidado', models.IntegerField()),
+                ('colores', models.IntegerField()),
+                ('geometricas', models.IntegerField()),
+                ('artista', models.IntegerField()),
+                ('points', models.IntegerField()),
             ],
             options={
             },
