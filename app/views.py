@@ -1175,6 +1175,7 @@ def analyzeProject(request,file_name, fileName):
         #nota arreglar esta parte por que si no se instala los plugins por medio de setup hairball cambiar la direccion de los slash para windows
         #la direccion de /plugins/ son para servidores linux cambiar para que funcione
         metricPerceptivos = "hairball -d "+os.path.dirname(os.path.dirname(__file__))+ "/plugins/"+" -p perceptivos.Perceptivos " + file_name
+        metricFascinantes = "hairball -d "+os.path.dirname(os.path.dirname(__file__))+ "/plugins/"+" -p fascinantes.Fascinantes " + file_name
         metricMastery = "hairball -p mastery.Mastery " + file_name
         metricDuplicateScript = "hairball -p \
                                 duplicate.DuplicateScripts " + file_name
@@ -1189,6 +1190,7 @@ def analyzeProject(request,file_name, fileName):
         #metricBlockCounts = "hairball -p blocks.BlockCounts " + file_name
         #Response from hairball
         resultPerceptivos = os.popen(metricPerceptivos).read()
+        resultFascinantes = os.popen(metricFascinantes).read()
         resultMastery = os.popen(metricMastery).read()
         resultDuplicateScript = os.popen(metricDuplicateScript).read()
         resultSpriteNaming = os.popen(metricSpriteNaming).read()
@@ -1200,6 +1202,7 @@ def analyzeProject(request,file_name, fileName):
         #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
         #Create a dictionary with necessary information
         dictionary.update(procPerceptivos(request,resultPerceptivos, fileName))
+        dictionary.update(procFascinantes(request,resultFascinantes, fileName))
         dictionary.update(procMastery(request,resultMastery, fileName))
         dictionary.update(procDuplicateScript(resultDuplicateScript, fileName))
         dictionary.update(procSpriteNaming(resultSpriteNaming, fileName))
