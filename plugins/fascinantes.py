@@ -69,6 +69,10 @@ class Fascinantes(HairballPlugin):
                 self.__final_result['geometricas'] = self.__analyzegeometricas(block_list)
             except:
                 self.__final_result = {}
+                self.__final_result['colores'] = 0
+                self.__final_result['artista'] = 0
+                self.__final_result['anidado'] = 0
+                self.__final_result['geometricas'] = 0
 
         """modificar con el mario el try y el except
         self.__final_result['colores'] = self.__analyzecolores(block_list)

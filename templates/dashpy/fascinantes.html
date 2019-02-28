@@ -43,61 +43,43 @@
                  {% for obj in dic %}
                  <tr>               
                 <td><span>{{ obj.filename }}</span></td>
-                {% if obj.mecanica == 3 %}
+                {% if obj.anidado == 3 %}
                 <td><span class="dot3"></span></td>
-                {% elif obj.mecanica == 2 %}
+                {% elif obj.anidado == 2 %}
                 <td><span class="dot2"></span></td>
-                {% elif obj.mecanica == 1 %}              
+                {% elif obj.anidado == 1 %}              
                 <td><span class="dot1"></span></td>
                 {% else %}
                 <td><span class="dot0"></span></td>
                 {% endif %}
-                {% if obj.dialogos == 3 %}
+                {% if obj.colores == 3 %}
                 <td><span class="dot3"></span></td>
-                {% elif obj.dialogos == 2 %}
+                {% elif obj.colores == 2 %}
                 <td><span class="dot2"></span></td>
-                {% elif obj.dialogos == 1 %}              
+                {% elif obj.colores == 1 %}              
                 <td><span class="dot1"></span></td>
                 {% else %}
                 <td><span class="dot0"></span></td>
                 {% endif %}
-                {% if obj.eventos == 3 %}
+                {% if obj.geometricas == 3 %}
                 <td><span class="dot3"></span></td>
-                {% elif obj.eventos == 2 %}
+                {% elif obj.geometricas == 2 %}
                 <td><span class="dot2"></span></td>
-                {% elif obj.eventos == 1 %}              
+                {% elif obj.geometricas == 1 %}              
                 <td><span class="dot1"></span></td>
                 {% else %}
                 <td><span class="dot0"></span></td>
                 {% endif %}
-                {% if obj.puntuacion == 3 %}
+                {% if obj.artista == 3 %}
                 <td><span class="dot3"></span></td>
-                {% elif obj.puntuacion == 2 %}
+                {% elif obj.artista == 2 %}
                 <td><span class="dot2"></span></td>
-                {% elif obj.puntuacion == 1 %}              
+                {% elif obj.artista == 1 %}              
                 <td><span class="dot1"></span></td>
                 {% else %}
                 <td><span class="dot0"></span></td>
                 {% endif %}
-                {% if obj.acciones == 3 %}
-                <td><span class="dot3"></span></td>
-                {% elif obj.acciones == 2 %}
-                <td><span class="dot2"></span></td>
-                {% elif obj.acciones == 1 %}              
-                <td><span class="dot1"></span></td>
-                {% else %}
-                <td><span class="dot0"></span></td>
-                {% endif %}
-                {% if obj.objetivo == 3 %}
-                <td><span class="dot3"></span></td>
-                {% elif obj.objetivo == 2 %}
-                <td><span class="dot2"></span></td>
-                {% elif obj.objetivo == 1 %}              
-                <td><span class="dot1"></span></td>
-                {% else %}
-                <td><span class="dot0"></span></td>
-                {% endif %}
-                <td><span>Obtuviste {{ obj.puntaje }} ptos</span></td>               
+                <td><span>Obtuviste {{ obj.points }} ptos</span></td>               
                 </tr>
                 {% endfor %}
         </table>
@@ -107,7 +89,7 @@
 
     <div class="ambos">
 
-    <div class="puntuacion">
+    <div class="artista">
         <table>
             <tr>
                 <td><span>  <img src="/static/app/imagenes/monito2.png" id="monito"></span> </td>
