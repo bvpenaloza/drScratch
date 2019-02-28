@@ -14,6 +14,7 @@ urlpatterns = (
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),
     url(r'^selector', 'app.views.selector',),
     url(r'^dashpy','app.views.dashpy',),
+    url(r'^fascinantes','app.views.fascinantes',),
     #url(r'^login', 'app.views.loginUser',),
     #url(r'^logout', 'app.views.logoutUser',),
     url(r'^users$', 'app.views.signUpUser',),
