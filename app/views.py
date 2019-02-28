@@ -111,7 +111,7 @@ def dashpy_perceptivos(request):
 def dashpy_fascinantes(request): 
     global diccionarioglobal
     diccionary = diccionarioglobal
-    return render_to_response("dashpy/perceptivos.html", {'dic':diccionary} , context_instance = RC(request))
+    return render_to_response("dashpy/fascinantes.html", {'dic':diccionary} , context_instance = RC(request))
 
 
 #_______________________ TO UNREGISTERED USER ___________________________#
@@ -200,7 +200,7 @@ def selector(request):
                         level='master'
                     elif (int(f.score) > 7):
                         level='developing'
-                    listValues = [ f.filename, f.level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript, f.puntaje, f.dialogos, f.eventos, f.puntuacion, f.acciones, f.objetivo, f.mecanica, f.anidado, f.colores, f.geometricas, f.artista, f.points]
+                    listValues = [ f.filename, level, f.score, f.abstraction, f.parallelization, f.logic, f.synchronization, f.flowControl, f.userInteractivity, f.dataRepresentation , f.spriteNaming , f.initialization, f.deadCode, f.duplicateScript, f.puntaje, f.dialogos, f.eventos, f.puntuacion, f.acciones, f.objetivo, f.mecanica, f.anidado, f.colores, f.geometricas, f.artista, f.points]
                     updateSheet(listValues, row, sheet)
                     row += 1
                 diccionarioglobal = diccionary    
@@ -1174,8 +1174,8 @@ def analyzeProject(request,file_name, fileName):
         #Request to hairball
         #nota arreglar esta parte por que si no se instala los plugins por medio de setup hairball cambiar la direccion de los slash para windows
         #la direccion de /plugins/ son para servidores linux cambiar para que funcione
-        metricPerceptivos = "hairball -d "+os.path.dirname(os.path.dirname(__file__))+ "/plugins/"+" -p perceptivos.Perceptivos " + file_name
-        metricFascinantes = "hairball -d "+os.path.dirname(os.path.dirname(__file__))+ "/plugins/"+" -p fascinantes.Fascinantes " + file_name
+        metricPerceptivos = "hairball -d "+os.path.dirname(os.path.dirname(__file__))+ "\plugins\\"+" -p perceptivos.Perceptivos " + file_name
+        metricFascinantes = "hairball -d "+os.path.dirname(os.path.dirname(__file__))+ "\plugins\\"+" -p fascinantes.Fascinantes " + file_name
         metricMastery = "hairball -p mastery.Mastery " + file_name
         metricDuplicateScript = "hairball -p \
                                 duplicate.DuplicateScripts " + file_name
@@ -1260,7 +1260,7 @@ def procPerceptivos(request, lines, fileName):
     d = {}
     d = ast.literal_eval(lineas[1])
     #save in db
-    fileName.puntaje = d["Puntaje"]
+    fileName.puntaje = d["puntaje"]
     fileName.dialogos = d["Dialogos"]
     fileName.eventos = d["Eventos"]
     fileName.puntuacion = d["Puntuacion"]

@@ -63,16 +63,16 @@ class Fascinantes(HairballPlugin):
         #Run plugins
         if block_list:
             try:
-                self.__final_result['colores'] = self.__analyzecolores(block_list)
-                self.__final_result['artista'] = self.__analyzeartista(block_list)
-                self.__final_result['anidado'] = self.__analyzeanidado(block_list)
-                self.__final_result['geometricas'] = self.__analyzegeometricas(block_list)
+                self.__final_result['Colores'] = self.__analyzecolores(block_list)
+                self.__final_result['Artista'] = self.__analyzeartista(block_list)
+                self.__final_result['Anidado'] = self.__analyzeanidado(block_list)
+                self.__final_result['Geometricas'] = self.__analyzegeometricas(block_list)
             except:
                 self.__final_result = {}
-                self.__final_result['colores'] = 0
-                self.__final_result['artista'] = 0
-                self.__final_result['anidado'] = 0
-                self.__final_result['geometricas'] = 0
+                self.__final_result['Colores'] = 0
+                self.__final_result['Artista'] = 0
+                self.__final_result['Anidado'] = 0
+                self.__final_result['Geometricas'] = 0
 
         """modificar con el mario el try y el except
         self.__final_result['colores'] = self.__analyzecolores(block_list)
@@ -87,15 +87,15 @@ class Fascinantes(HairballPlugin):
             #Variable
             points = reduce(lambda a, b: a+b, self.__final_result.values())
             #Evalutes the range points of Scratch project
-            self.__final_result['points'] = points
+            self.__final_result['Points'] = points
           #  self.__final_result['Error'] = 'None'
         else:
-            self.__final_result['points'] = 0
+            self.__final_result['Points'] = 0
          #   self.__final_result['Error'] = 'File does not exist or contain empty scripts'
-            self.__final_result['colores'] = 0 
-            self.__final_result['artista'] = 0
-            self.__final_result['anidado'] = 0
-            self.__final_result['geometricas'] = 0
+            self.__final_result['Colores'] = 0 
+            self.__final_result['Artista'] = 0
+            self.__final_result['Anidado'] = 0
+            self.__final_result['Geometricas'] = 0
             
         #self.__final_result['Max points'] = 12
         
