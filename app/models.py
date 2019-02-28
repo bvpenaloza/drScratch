@@ -38,6 +38,11 @@ class File(models.Model):
     acciones = models.IntegerField()
     mecanica = models.IntegerField()
     objetivo = models.IntegerField()
+    anidado = models.IntegerField()
+    colores = models.IntegerField()
+    geometricas = models.IntegerField()
+    artista = models.IntegerField()
+    points = models.IntegerField()
 
 class Student(models.Model):
     student = models.ForeignKey(User, unique=True)  
@@ -151,3 +156,11 @@ class Perceptivos(models.Model):
     acciones = models.IntegerField()
     mecanica = models.IntegerField()
     objetivo = models.IntegerField()
+
+class Fascinantes(models.Model):
+    myproject = models.ForeignKey(Project)
+    anidado = models.IntegerField()
+    colores = models.IntegerField()
+    geometricas = models.IntegerField()
+    artista = models.IntegerField()
+    points = models.IntegerField()
