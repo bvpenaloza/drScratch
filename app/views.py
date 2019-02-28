@@ -275,7 +275,7 @@ def uploadUnregistered(request):
                         spriteNaming = 0 ,initialization = 0,
                         deadCode = 0, duplicateScript = 0, eventos = 0,
                         puntuacion = 0, puntaje = 0, mecanica = 0,
-                        dialogos = 0, acciones = 0, objetivo = 0
+                        dialogos = 0, acciones = 0, objetivo = 0,
                         anidado = 0, colores = 0, geometricas = 0,
                         artista = 0, points = 0)
         fileName.save()
@@ -358,7 +358,7 @@ def uploadUnregisteredSecond(request,file):
                         spriteNaming = 0 ,initialization = 0,
                         deadCode = 0, duplicateScript = 0, eventos = 0,
                         puntuacion = 0, puntaje = 0, mecanica = 0,
-                        dialogos = 0, acciones = 0, objetivo = 0
+                        dialogos = 0, acciones = 0, objetivo = 0,
                         anidado = 0, colores = 0, geometricas = 0,
                         artista = 0, points = 0)
         fileName.save()
@@ -485,7 +485,7 @@ def sendRequestgetSB2(idProject, organization, method):
                      spriteNaming = 0 ,initialization = 0,
                      deadCode = 0, duplicateScript = 0, eventos = 0,
                      puntuacion = 0, puntaje = 0, mecanica = 0,
-                     dialogos = 0, acciones = 0, objetivo = 0
+                     dialogos = 0, acciones = 0, objetivo = 0,
                      anidado = 0, colores = 0, geometricas = 0,
                      artista = 0, points = 0)
     fileName.save()
