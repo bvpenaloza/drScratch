@@ -99,17 +99,18 @@ def error500(request):
 
 #_______________________ dashpy criterios perceptivos ___________________#
 
-def dashpy(request): 
+def dashpy_perceptivos(request): 
     global diccionarioglobal
     diccionary = diccionarioglobal
-    print (diccionarioglobal)
-    print (diccionary)
-    print ("fuera del for")
-    for obj in diccionary:
-        print(obj.dataRepresentation)
-        print(obj.mecanica)
-        print(obj)
-        print("dentro del for")
+    return render_to_response("dashpy/perceptivos.html", {'dic':diccionary} , context_instance = RC(request))
+
+
+    
+#_______________________ dashpy criterios fascinantes ___________________#
+
+def dashpy_fascinantes(request): 
+    global diccionarioglobal
+    diccionary = diccionarioglobal
     return render_to_response("dashpy/perceptivos.html", {'dic':diccionary} , context_instance = RC(request))
 
 
